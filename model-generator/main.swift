@@ -32,9 +32,17 @@ do {
     exit(EX_USAGE)
 }
 
+guard let code = sourceCode.value else {
+    exit(EX_NOINPUT)
+}
+
 print(sourceCode.value)
 print(moduleName.value)
 
-private struct TestStruct {
-    var name: String
+do {
+    let modelCode = try ModelGenerator.modelCodeFromSourceCode(code)
+    print(modelCode)
+    exit(EX_OK)
+} catch {
+    print("some error \(error)")
 }

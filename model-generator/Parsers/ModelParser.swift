@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ModelParserError: ErrorType {
+enum ModelParserError: ModelGeneratorErrorType {
     case ClassShouldBeDeclaredAsFinal
 
     case MultipleStructDeclarationsFound
@@ -30,7 +30,7 @@ struct ModelParser {
             throw ModelParserError.NoModelNameFound
         }
 
-        return Model(name: name, type: modelType, accessLevel: accessLevel)
+        return Model(name: name, type: modelType, accessLevel: accessLevel, properties: [])
     }
 
     static func modelTypeForSourceCode(code: String) throws -> ModelType? {

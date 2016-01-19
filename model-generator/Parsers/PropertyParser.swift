@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+enum PropertyParserError: ModelGeneratorErrorType {
+    case GeneralError
+}
+
+struct PropertyParser {
+    static func propertiesFromSourceCode(sourceCode: String) throws -> [Property] {
+
+        return []
+    }
+}

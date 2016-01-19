@@ -8,3 +8,19 @@
 
 import Foundation
 
+protocol ModelGeneratorErrorType: ErrorType {
+    func description() -> String
+}
+
+struct ModelGenerator {
+    static func modelCodeFromSourceCode(sourceCode: String) throws -> String {
+        var model = try ModelParser.modelFromSourceCode(sourceCode)
+        let properties = try PropertyParser.propertiesFromSourceCode(sourceCode)
+
+        model.properties = properties
+
+
+
+        return ""
+    }
+}

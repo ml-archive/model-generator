@@ -20,11 +20,8 @@ enum ModelType: String {
 }
 
 struct Model {
-    var name: String
-    var type: ModelType
-    var accessLevel: AccessLevel = .Internal
-}
-
-class Test {
-    final var something: String?
+    let name: String
+    let type: ModelType
+    let accessLevel: AccessLevel
+    var properties: [Property]
 }
