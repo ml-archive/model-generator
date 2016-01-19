@@ -35,6 +35,8 @@
 		0142C6E21C4ECD36004FBF93 /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
 		0142C6E31C4ECD36004FBF93 /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
 		0142C6E51C4ECF0C004FBF93 /* IndentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E41C4ECF0C004FBF93 /* IndentationTests.swift */; };
+		0142C6E71C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */; };
+		0142C6E81C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +70,7 @@
 		0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableCodeGenerator.swift; sourceTree = "<group>"; };
 		0142C6E11C4ECD36004FBF93 /* Indentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indentation.swift; sourceTree = "<group>"; };
 		0142C6E41C4ECF0C004FBF93 /* IndentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentationTests.swift; sourceTree = "<group>"; };
+		0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelGeneratorCLI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,7 @@
 		0142C6BF1C4EB4DF004FBF93 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */,
 				0142C6C01C4EB4E8004FBF93 /* Extensions.swift */,
 				0142C6E11C4ECD36004FBF93 /* Indentation.swift */,
 			);
@@ -273,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0142C6E71C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */,
 				0142C6B51C4E9934004FBF93 /* Property.swift in Sources */,
 				0142C6C11C4EB4E8004FBF93 /* Extensions.swift in Sources */,
 				0142C6B31C4E992E004FBF93 /* Model.swift in Sources */,
@@ -295,6 +300,7 @@
 			files = (
 				0142C6D01C4EB9B8004FBF93 /* ModelGenerator.swift in Sources */,
 				0142C6D11C4EB9B8004FBF93 /* ModelParser.swift in Sources */,
+				0142C6E81C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */,
 				0142C6D21C4EB9B8004FBF93 /* PropertyParser.swift in Sources */,
 				0142C6D31C4EB9B8004FBF93 /* Model.swift in Sources */,
 				0142C6DF1C4ECA94004FBF93 /* DecodableCodeGenerator.swift in Sources */,
