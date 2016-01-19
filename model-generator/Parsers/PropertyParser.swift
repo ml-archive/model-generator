@@ -10,6 +10,12 @@ import Foundation
 
 enum PropertyParserError: ModelGeneratorErrorType {
     case GeneralError
+
+    func description() -> String {
+        switch self {
+        case .GeneralError: return "General Error"
+        }
+    }
 }
 
 struct PropertyParser {

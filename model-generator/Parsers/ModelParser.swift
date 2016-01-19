@@ -16,6 +16,21 @@ enum ModelParserError: ModelGeneratorErrorType {
     case NoStructOrClassDeclarationFound
 
     case NoModelNameFound
+
+    func description() -> String {
+        switch self {
+        case .ClassShouldBeDeclaredAsFinal:
+            return "A class has to be defined as final."
+        case .MultipleStructDeclarationsFound:
+            return "Multiple `struct` declarations found in the source code."
+        case .MultipleClassDeclarationsFound:
+            return "Multiple `class` declarations found in the source code."
+        case .NoStructOrClassDeclarationFound:
+            return "No `class` or `struct` declaration found in the source code."
+        case .NoModelNameFound:
+            return "No struct or class name found in the source code."
+        }
+    }
 }
 
 struct ModelParser {
