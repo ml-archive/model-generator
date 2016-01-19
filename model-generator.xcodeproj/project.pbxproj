@@ -37,6 +37,9 @@
 		0142C6E51C4ECF0C004FBF93 /* IndentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E41C4ECF0C004FBF93 /* IndentationTests.swift */; };
 		0142C6E71C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */; };
 		0142C6E81C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */; };
+		0142C6EA1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
+		0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
+		0142C6ED1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6EC1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +74,8 @@
 		0142C6E11C4ECD36004FBF93 /* Indentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indentation.swift; sourceTree = "<group>"; };
 		0142C6E41C4ECF0C004FBF93 /* IndentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentationTests.swift; sourceTree = "<group>"; };
 		0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelGeneratorCLI.swift; sourceTree = "<group>"; };
+		0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCodeGenerator.swift; sourceTree = "<group>"; };
+		0142C6EC1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCodeGeneratorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				0142C6BE1C4E9AD7004FBF93 /* ModelGenerator.swift */,
+				0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */,
 				0142C6DB1C4ECA8A004FBF93 /* EncodableCodeGenerator.swift */,
 				0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */,
 			);
@@ -184,6 +190,7 @@
 			children = (
 				0142C6C81C4EB94B004FBF93 /* ModelParserTests.swift */,
 				0142C6E41C4ECF0C004FBF93 /* IndentationTests.swift */,
+				0142C6EC1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift */,
 				0142C6CA1C4EB94B004FBF93 /* Info.plist */,
 			);
 			path = "model-generator-tests";
@@ -285,6 +292,7 @@
 				0142C6DE1C4ECA94004FBF93 /* DecodableCodeGenerator.swift in Sources */,
 				0142C6B01C4E9425004FBF93 /* StringExtensions.swift in Sources */,
 				0142C6DA1C4EC8AB004FBF93 /* ModelGenerator.swift in Sources */,
+				0142C6EA1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */,
 				0142C6BC1C4E9AC3004FBF93 /* PropertyParser.swift in Sources */,
 				0142C69E1C4E9099004FBF93 /* main.swift in Sources */,
 				0142C6AF1C4E9425004FBF93 /* Option.swift in Sources */,
@@ -309,8 +317,10 @@
 				0142C6D41C4EB9B8004FBF93 /* Property.swift in Sources */,
 				0142C6D51C4EB9B8004FBF93 /* Extensions.swift in Sources */,
 				0142C6D61C4EB9B8004FBF93 /* main.swift in Sources */,
+				0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */,
 				0142C6D71C4EB9B8004FBF93 /* CommandLine.swift in Sources */,
 				0142C6D81C4EB9B8004FBF93 /* Option.swift in Sources */,
+				0142C6ED1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift in Sources */,
 				0142C6D91C4EB9B8004FBF93 /* StringExtensions.swift in Sources */,
 				0142C6C91C4EB94B004FBF93 /* ModelParserTests.swift in Sources */,
 				0142C6E01C4ECA96004FBF93 /* EncodableCodeGenerator.swift in Sources */,
