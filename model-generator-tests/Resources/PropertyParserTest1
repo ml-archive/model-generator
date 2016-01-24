@@ -1,0 +1,5 @@
+struct Test {
+    var name = "" //   <-keyName
+    var optionalNumber: Double? = 1.0
+    //var commentedOut: String?
+}

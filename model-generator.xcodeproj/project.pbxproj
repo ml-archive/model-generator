@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		010C441B1C54DCF8003E764F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010C44131C54DCF8003E764F /* Info.plist */; };
 		010C441C1C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44161C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift */; };
 		010C441D1C54DCF8003E764F /* IndentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44181C54DCF8003E764F /* IndentationTests.swift */; };
 		010C441E1C54DCF8003E764F /* ModelParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C441A1C54DCF8003E764F /* ModelParserTests.swift */; };
@@ -41,6 +40,8 @@
 		0142C6E81C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */; };
 		0142C6EA1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
 		0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
+		0169B88A1C55409000ADF94F /* PropertyParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8891C55409000ADF94F /* PropertyParserTests.swift */; };
+		0169B88E1C5544C700ADF94F /* PropertyParserTest1 in Resources */ = {isa = PBXBuildFile; fileRef = 0169B88C1C5543A200ADF94F /* PropertyParserTest1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +78,8 @@
 		0142C6E11C4ECD36004FBF93 /* Indentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indentation.swift; sourceTree = "<group>"; };
 		0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelGeneratorCLI.swift; sourceTree = "<group>"; };
 		0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCodeGenerator.swift; sourceTree = "<group>"; };
+		0169B8891C55409000ADF94F /* PropertyParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyParserTests.swift; sourceTree = "<group>"; };
+		0169B88C1C5543A200ADF94F /* PropertyParserTest1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PropertyParserTest1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				010C441A1C54DCF8003E764F /* ModelParserTests.swift */,
+				0169B8891C55409000ADF94F /* PropertyParserTests.swift */,
 			);
 			path = "Parsers Tests";
 			sourceTree = "<group>";
@@ -232,9 +236,18 @@
 			isa = PBXGroup;
 			children = (
 				010C44141C54DCF8003E764F /* Tests */,
+				0169B88B1C55438900ADF94F /* Resources */,
 				010C44121C54DCF8003E764F /* Supporting Files */,
 			);
 			path = "model-generator-tests";
+			sourceTree = "<group>";
+		};
+		0169B88B1C55438900ADF94F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0169B88C1C5543A200ADF94F /* PropertyParserTest1 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				010C441B1C54DCF8003E764F /* Info.plist in Resources */,
+				0169B88E1C5544C700ADF94F /* PropertyParserTest1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +367,7 @@
 				0142C6E81C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */,
 				0142C6D21C4EB9B8004FBF93 /* PropertyParser.swift in Sources */,
 				0142C6D31C4EB9B8004FBF93 /* Model.swift in Sources */,
+				0169B88A1C55409000ADF94F /* PropertyParserTests.swift in Sources */,
 				0142C6DF1C4ECA94004FBF93 /* DecodableCodeGenerator.swift in Sources */,
 				0142C6E31C4ECD36004FBF93 /* Indentation.swift in Sources */,
 				010C441E1C54DCF8003E764F /* ModelParserTests.swift in Sources */,
