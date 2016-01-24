@@ -9,7 +9,7 @@
 import Foundation
 
 struct Indentation {
-    static let defaultString = "    "
+    static let defaultString = String(count: 4, repeatedValue: " " as Character)
 
     let level: Int
     let customString: String?
@@ -35,5 +35,15 @@ extension Indentation {
         }
 
         return string
+    }
+}
+
+extension Indentation {
+    func nextLevel() -> Indentation {
+        return Indentation(level: level + 1, customString: customString)
+    }
+
+    func previousLevel() -> Indentation {
+        return Indentation(level: level > 0 ? level - 1 : 0, customString: customString)
     }
 }

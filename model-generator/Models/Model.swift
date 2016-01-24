@@ -25,3 +25,18 @@ struct Model {
     let accessLevel: AccessLevel
     var properties: [Property]
 }
+
+extension Model {
+    func longestPropertyLength() -> Int {
+        var length = 0
+
+        for property in properties {
+            let count = property.key?.characters.count ?? property.name.characters.count
+            if count > length {
+                length = count
+            }
+        }
+
+        return length
+    }
+}

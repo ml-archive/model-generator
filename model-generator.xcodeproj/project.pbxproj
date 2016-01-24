@@ -217,8 +217,8 @@
 			children = (
 				0142C6BE1C4E9AD7004FBF93 /* ModelGenerator.swift */,
 				0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */,
-				0142C6DB1C4ECA8A004FBF93 /* EncodableCodeGenerator.swift */,
 				0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */,
+				0142C6DB1C4ECA8A004FBF93 /* EncodableCodeGenerator.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";

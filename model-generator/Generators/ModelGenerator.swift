@@ -14,13 +14,12 @@ protocol ModelGeneratorErrorType: ErrorType {
 
 struct ModelGenerator {
     static func modelCodeFromSourceCode(sourceCode: String, withModuleName moduleName: String? = nil) throws -> String {
-        var model = try ModelParser.modelFromSourceCode(sourceCode)
-        let properties = try PropertyParser.propertiesFromSourceCode(sourceCode)
+        var model        = try ModelParser.modelFromSourceCode(sourceCode)
+        model.properties = try PropertyParser.propertiesFromSourceCode(sourceCode)
 
-        model.properties = properties
+        let decodableCode = DecodableCodeGenerator.decodableCodeWithModel(model)
+        let encodableCode = EncodableCodeGenerator.encodableCodeWithModel(model)
 
-
-
-        return ""
+        return ExtensionCodeGenerator.extensionCodeWithModel(model, moduleName: nil, andContent: decodableCode + encodableCode)
     }
 }

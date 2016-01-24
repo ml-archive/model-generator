@@ -9,5 +9,8 @@
 import Foundation
 
 struct EncodableCodeGenerator {
+    static func encodableCodeWithModel(model: Model) -> String {
 
+        return ""
+    }
 }
