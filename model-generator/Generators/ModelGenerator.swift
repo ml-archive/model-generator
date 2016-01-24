@@ -13,7 +13,7 @@ protocol ModelGeneratorErrorType: ErrorType {
 }
 
 struct ModelGenerator {
-    static func modelCodeFromSourceCode(sourceCode: String) throws -> String {
+    static func modelCodeFromSourceCode(sourceCode: String, withModuleName moduleName: String? = nil) throws -> String {
         var model = try ModelParser.modelFromSourceCode(sourceCode)
         let properties = try PropertyParser.propertiesFromSourceCode(sourceCode)
 
