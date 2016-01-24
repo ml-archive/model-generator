@@ -18,6 +18,14 @@ extension String {
             return NSMakeRange(0, characters.count)
         }
     }
+
+    func trimWhitespace() -> String {
+        return stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    }
+
+    func trimCharacters(inString: String) -> String {
+        return stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: inString))
+    }
 }
 
 extension NSRegularExpression {

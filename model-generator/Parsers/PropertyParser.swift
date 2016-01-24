@@ -33,7 +33,7 @@ struct PropertyParser {
 
         for line in lines {
             // Skip empty lines
-            let trimmedLine = line.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            let trimmedLine = line.trimWhitespace()
             if trimmedLine.characters.count == 0 { continue }
 
             // If line is commented out
@@ -61,7 +61,7 @@ struct PropertyParser {
                 isOptional = type.containsString("?")
 
                 // Check if primitive type
-                let pureType = type.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "?!"))
+                let pureType = type.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "?! "))
                 isPrimitive = Property.primitiveTypes.contains(pureType)
             } else {
                 hasType = false
@@ -84,7 +84,7 @@ struct PropertyParser {
             // Find the override key if it exists
             let propertyKey: String?
             if let keyMatch = PropertyParser.keyOverrideRegex?.firstMatchInString(line) {
-                propertyKey = line.substringWithRange(keyMatch.range)
+                propertyKey = line.substringWithRange(keyMatch.range).trimCharacters(" <-")
             } else {
                 propertyKey = nil
             }
@@ -146,7 +146,7 @@ extension PropertyParser {
     static var propertyNameRegex: NSRegularExpression? {
         do {
             let regex = try NSRegularExpression(
-                pattern: "(?>[ ])(.*)(?=\\:)|(?>[ ]+)(.*)(?= \\=)",
+                pattern: "(?<=var )[ ]*([^\\s]*)(?=[ ]*\\:)|(?<=var )[ ]*([^\\s]*)(?=[ ]*\\=)",
                 options: NSRegularExpressionOptions(rawValue: 0))
             return regex
         } catch {
@@ -158,7 +158,7 @@ extension PropertyParser {
     static var propertyTypeRegex: NSRegularExpression? {
         do {
             let regex = try NSRegularExpression(
-                pattern: "(?>\\:[ ]*)(.*)(?= \\=)",
+                pattern: "(?<=\\:)(?:[ ]*)([^\\s]*)(?:[ ]*)(?=\\=)",
                 options: NSRegularExpressionOptions(rawValue: 0))
             return regex
         } catch {
@@ -194,7 +194,7 @@ extension PropertyParser {
     static var keyOverrideRegex: NSRegularExpression? {
         do {
             let regex = try NSRegularExpression(
-                pattern: "(?<=\\/\\/)[ ]+\\<\\-[ ]+([^\\s]+)[ ]*",
+                pattern: "(?<=\\/\\/)[ ]*\\<\\-[ ]*([^\\s]+)[ ]*",
                 options: NSRegularExpressionOptions(rawValue: 0))
             return regex
         } catch {
