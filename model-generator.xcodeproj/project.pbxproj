@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010C441B1C54DCF8003E764F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010C44131C54DCF8003E764F /* Info.plist */; };
+		010C441C1C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44161C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift */; };
+		010C441D1C54DCF8003E764F /* IndentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44181C54DCF8003E764F /* IndentationTests.swift */; };
+		010C441E1C54DCF8003E764F /* ModelParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C441A1C54DCF8003E764F /* ModelParserTests.swift */; };
 		0142C69E1C4E9099004FBF93 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C69D1C4E9099004FBF93 /* main.swift */; };
 		0142C6AE1C4E9425004FBF93 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AA1C4E9425004FBF93 /* CommandLine.swift */; };
 		0142C6AF1C4E9425004FBF93 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AC1C4E9425004FBF93 /* Option.swift */; };
@@ -16,7 +20,6 @@
 		0142C6BA1C4E9ABA004FBF93 /* ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B91C4E9ABA004FBF93 /* ModelParser.swift */; };
 		0142C6BC1C4E9AC3004FBF93 /* PropertyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6BB1C4E9AC3004FBF93 /* PropertyParser.swift */; };
 		0142C6C11C4EB4E8004FBF93 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6C01C4EB4E8004FBF93 /* Extensions.swift */; };
-		0142C6C91C4EB94B004FBF93 /* ModelParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6C81C4EB94B004FBF93 /* ModelParserTests.swift */; };
 		0142C6D01C4EB9B8004FBF93 /* ModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6BE1C4E9AD7004FBF93 /* ModelGenerator.swift */; };
 		0142C6D11C4EB9B8004FBF93 /* ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B91C4E9ABA004FBF93 /* ModelParser.swift */; };
 		0142C6D21C4EB9B8004FBF93 /* PropertyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6BB1C4E9AC3004FBF93 /* PropertyParser.swift */; };
@@ -34,12 +37,10 @@
 		0142C6E01C4ECA96004FBF93 /* EncodableCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6DB1C4ECA8A004FBF93 /* EncodableCodeGenerator.swift */; };
 		0142C6E21C4ECD36004FBF93 /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
 		0142C6E31C4ECD36004FBF93 /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
-		0142C6E51C4ECF0C004FBF93 /* IndentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E41C4ECF0C004FBF93 /* IndentationTests.swift */; };
 		0142C6E71C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */; };
 		0142C6E81C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */; };
 		0142C6EA1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
 		0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
-		0142C6ED1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6EC1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		010C44131C54DCF8003E764F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		010C44161C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCodeGeneratorTests.swift; sourceTree = "<group>"; };
+		010C44181C54DCF8003E764F /* IndentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentationTests.swift; sourceTree = "<group>"; };
+		010C441A1C54DCF8003E764F /* ModelParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelParserTests.swift; sourceTree = "<group>"; };
 		0142C69A1C4E9099004FBF93 /* model-generator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "model-generator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0142C69D1C4E9099004FBF93 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0142C6AA1C4E9425004FBF93 /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
@@ -67,15 +72,11 @@
 		0142C6BE1C4E9AD7004FBF93 /* ModelGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGenerator.swift; sourceTree = "<group>"; };
 		0142C6C01C4EB4E8004FBF93 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0142C6C61C4EB94B004FBF93 /* model-generator-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "model-generator-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0142C6C81C4EB94B004FBF93 /* ModelParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelParserTests.swift; sourceTree = "<group>"; };
-		0142C6CA1C4EB94B004FBF93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0142C6DB1C4ECA8A004FBF93 /* EncodableCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableCodeGenerator.swift; sourceTree = "<group>"; };
 		0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableCodeGenerator.swift; sourceTree = "<group>"; };
 		0142C6E11C4ECD36004FBF93 /* Indentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indentation.swift; sourceTree = "<group>"; };
-		0142C6E41C4ECF0C004FBF93 /* IndentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentationTests.swift; sourceTree = "<group>"; };
 		0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelGeneratorCLI.swift; sourceTree = "<group>"; };
 		0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCodeGenerator.swift; sourceTree = "<group>"; };
-		0142C6EC1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCodeGeneratorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010C44121C54DCF8003E764F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				010C44131C54DCF8003E764F /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		010C44141C54DCF8003E764F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				010C44191C54DCF8003E764F /* Parsers Tests */,
+				010C44151C54DCF8003E764F /* Generators Tests */,
+				010C44171C54DCF8003E764F /* Other Tests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		010C44151C54DCF8003E764F /* Generators Tests */ = {
+			isa = PBXGroup;
+			children = (
+				010C44161C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift */,
+			);
+			path = "Generators Tests";
+			sourceTree = "<group>";
+		};
+		010C44171C54DCF8003E764F /* Other Tests */ = {
+			isa = PBXGroup;
+			children = (
+				010C44181C54DCF8003E764F /* IndentationTests.swift */,
+			);
+			path = "Other Tests";
+			sourceTree = "<group>";
+		};
+		010C44191C54DCF8003E764F /* Parsers Tests */ = {
+			isa = PBXGroup;
+			children = (
+				010C441A1C54DCF8003E764F /* ModelParserTests.swift */,
+			);
+			path = "Parsers Tests";
+			sourceTree = "<group>";
+		};
 		0142C6911C4E9099004FBF93 = {
 			isa = PBXGroup;
 			children = (
@@ -188,10 +231,8 @@
 		0142C6C71C4EB94B004FBF93 /* model-generator-tests */ = {
 			isa = PBXGroup;
 			children = (
-				0142C6C81C4EB94B004FBF93 /* ModelParserTests.swift */,
-				0142C6E41C4ECF0C004FBF93 /* IndentationTests.swift */,
-				0142C6EC1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift */,
-				0142C6CA1C4EB94B004FBF93 /* Info.plist */,
+				010C44141C54DCF8003E764F /* Tests */,
+				010C44121C54DCF8003E764F /* Supporting Files */,
 			);
 			path = "model-generator-tests";
 			sourceTree = "<group>";
@@ -274,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010C441B1C54DCF8003E764F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,22 +349,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				0142C6D01C4EB9B8004FBF93 /* ModelGenerator.swift in Sources */,
+				010C441D1C54DCF8003E764F /* IndentationTests.swift in Sources */,
 				0142C6D11C4EB9B8004FBF93 /* ModelParser.swift in Sources */,
 				0142C6E81C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */,
 				0142C6D21C4EB9B8004FBF93 /* PropertyParser.swift in Sources */,
 				0142C6D31C4EB9B8004FBF93 /* Model.swift in Sources */,
 				0142C6DF1C4ECA94004FBF93 /* DecodableCodeGenerator.swift in Sources */,
-				0142C6E51C4ECF0C004FBF93 /* IndentationTests.swift in Sources */,
 				0142C6E31C4ECD36004FBF93 /* Indentation.swift in Sources */,
+				010C441E1C54DCF8003E764F /* ModelParserTests.swift in Sources */,
 				0142C6D41C4EB9B8004FBF93 /* Property.swift in Sources */,
 				0142C6D51C4EB9B8004FBF93 /* Extensions.swift in Sources */,
 				0142C6D61C4EB9B8004FBF93 /* main.swift in Sources */,
+				010C441C1C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift in Sources */,
 				0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */,
 				0142C6D71C4EB9B8004FBF93 /* CommandLine.swift in Sources */,
 				0142C6D81C4EB9B8004FBF93 /* Option.swift in Sources */,
-				0142C6ED1C4ED746004FBF93 /* ExtensionCodeGeneratorTests.swift in Sources */,
 				0142C6D91C4EB9B8004FBF93 /* StringExtensions.swift in Sources */,
-				0142C6C91C4EB94B004FBF93 /* ModelParserTests.swift in Sources */,
 				0142C6E01C4ECA96004FBF93 /* EncodableCodeGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "model-generator-tests/Info.plist";
+				INFOPLIST_FILE = "model-generator-tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nodes.model-generator-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,7 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "model-generator-tests/Info.plist";
+				INFOPLIST_FILE = "model-generator-tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nodes.model-generator-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,6 +524,7 @@
 				0142C6CD1C4EB94B004FBF93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
