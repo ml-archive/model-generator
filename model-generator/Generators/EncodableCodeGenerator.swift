@@ -27,8 +27,8 @@ struct EncodableCodeGenerator {
 
             code += indent.string() + "dict[\"\(property.key ?? property.name)\"]"
             code += maxPropertyLength > keyCharactersCount ? String.repeated(" ", count: maxPropertyLength - keyCharactersCount) : ""
-            code += " = \(property.name)\(property.isOptional ? "?" : "")"
-            code += property.isPrimitiveType ? "" : ".encodableRepresentation()"
+            code += " = \(property.name)"
+            code += property.isPrimitiveType ? "" : "\(property.isOptional ? "?" : "").encodableRepresentation()"
             code += "\n"
         }
 
