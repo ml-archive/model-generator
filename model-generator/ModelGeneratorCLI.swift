@@ -61,20 +61,23 @@ public final class ModelGeneratorCLI: CommandLine {
             exit(EX_NOINPUT)
         }
 
-        print("INPUT:\n", sourceCode.value, "\n\n")
-
         // Create the generator settings
         var settings = ModelGeneratorSettings()
         settings.noConvertCamelCase    = noCamelCaseConversion.value
         settings.useNativeDictionaries = nativeDictionaries.value
         settings.moduleName            = moduleName.value
 
+        // Try generating the model and print to stdout if success
         do {
             let modelCode = try ModelGenerator.modelCodeFromSourceCode(code, withSettings: settings)
-            print("OUTPUT:\n\(modelCode)\n\n")
-            exit(EX_OK)
+            if let data = modelCode.dataUsingEncoding(NSUTF8StringEncoding) {
+                NSFileHandle.fileHandleWithStandardOutput().writeData(data)
+                exit(EX_OK)
+            } else {
+                exit(EXIT_FAILURE)
+            }
         } catch {
-            print("some error \(error)")
+            exit(EXIT_FAILURE)
         }
     }
 }
