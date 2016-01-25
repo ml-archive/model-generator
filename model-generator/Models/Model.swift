@@ -27,7 +27,20 @@ struct Model {
 }
 
 extension Model {
-    func longestPropertyLength() -> Int {
+    func longestPropertyNameLength() -> Int {
+        var length = 0
+
+        for property in properties {
+            let count = property.name.characters.count
+            if count > length {
+                length = count
+            }
+        }
+
+        return length
+    }
+
+    func longestPropertyKeyLength() -> Int {
         var length = 0
 
         for property in properties {

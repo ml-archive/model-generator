@@ -64,7 +64,7 @@ public final class ModelGeneratorCLI: CommandLine {
 
         do {
             let modelCode = try ModelGenerator.modelCodeFromSourceCode(code)
-            print("OUTPUT:\n", modelCode, "\n\n")
+            print("OUTPUT:\n\(modelCode)\n\n")
             exit(EX_OK)
         } catch {
             print("some error \(error)")

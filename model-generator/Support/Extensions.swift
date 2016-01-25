@@ -9,6 +9,10 @@
 import Foundation
 
 extension String {
+    static func repeated(character: Character, count: Int) -> String {
+        return String(count: count, repeatedValue: character)
+    }
+
     func substringWithRange(range: NSRange) -> String {
         return (self as NSString).substringWithRange(range)
     }
@@ -25,6 +29,27 @@ extension String {
 
     func trimCharacters(inString: String) -> String {
         return stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: inString))
+    }
+
+    func camelCaseToUnderscore() -> String {
+        var returnString = self
+
+        let characterArray = Array(returnString.characters).map { (character) -> String in
+            let inputCharacterString = String(character)
+            let lowerCaseCharacterString = String(character).lowercaseString
+
+            if inputCharacterString != lowerCaseCharacterString {
+                return "_" + lowerCaseCharacterString
+            }
+
+            return inputCharacterString
+        }
+
+        returnString = characterArray.reduce("") {
+            return $0 + $1
+        }
+
+        return returnString;
     }
 }
 
