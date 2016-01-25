@@ -12,16 +12,21 @@ struct EncodableCodeGenerator {
     static func encodableCodeWithModel(model: Model, useNativeDictionaries: Bool) -> String {
         var indent = Indentation(level: 1)
 
+        // Create the function signature
         var code = indent.string() + (model.accessLevel == .Public ? "public " : "")
         code    += "func encodableRepresentation() -> NSCoding {\n"
 
+        // Increase indent level
         indent = indent.nextLevel()
 
+        // Create the dictionary
         code += indent.string()
         code += (useNativeDictionaries ? "var dict = [String: AnyObject]()\n" : "let dict = NSMutableDictionary()\n")
 
+        // Get longest property key for alignment spaces
         let maxPropertyLength = model.longestPropertyKeyLength()
 
+        // Generate encodable code for each property
         for property in model.properties {
             let keyCharactersCount = property.key?.characters.count ?? property.name.characters.count
 
@@ -32,10 +37,13 @@ struct EncodableCodeGenerator {
             code += "\n"
         }
 
+        // Return the dictionary
         code += indent.string() + "return dict\n"
 
+        // Decrease the indent level
         indent = indent.previousLevel()
 
+        // Close the function
         code += indent.string() + "}"
 
         return code

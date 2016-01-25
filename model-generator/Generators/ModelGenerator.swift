@@ -20,12 +20,15 @@ protocol ModelGeneratorErrorType: ErrorType {
 
 struct ModelGenerator {
     static func modelCodeFromSourceCode(sourceCode: String, withSettings settings: ModelGeneratorSettings) throws -> String {
+        // Parse the model and its properties first
         var model        = try ModelParser.modelFromSourceCode(sourceCode)
         model.properties = try PropertyParser.propertiesFromSourceCode(sourceCode, noConvertCamelCaseKeys: settings.noConvertCamelCase)
 
+        // Genereate encodable and decodable code blocks
         let decodableCode = DecodableCodeGenerator.decodableCodeWithModel(model, useNativeDictionaries: settings.useNativeDictionaries)
         let encodableCode = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: settings.useNativeDictionaries)
 
+        // Combine both blocks in an extension block and return it
         return ExtensionCodeGenerator.extensionCodeWithModel(model, moduleName: nil, andContent: decodableCode + encodableCode)
     }
 }
