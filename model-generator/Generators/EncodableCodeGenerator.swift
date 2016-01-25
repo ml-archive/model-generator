@@ -9,7 +9,7 @@
 import Foundation
 
 struct EncodableCodeGenerator {
-    static func encodableCodeWithModel(model: Model) -> String {
+    static func encodableCodeWithModel(model: Model, useNativeDictionaries: Bool) -> String {
         var indent = Indentation(level: 1)
 
         var code = indent.string() + (model.accessLevel == .Public ? "public " : "")
@@ -17,7 +17,8 @@ struct EncodableCodeGenerator {
 
         indent = indent.nextLevel()
 
-        code += indent.string() + "let dict = NSMutableDictionary()\n"
+        code += indent.string()
+        code += (useNativeDictionaries ? "var dict = [String: AnyObject]()\n" : "let dict = NSMutableDictionary()\n")
 
         let maxPropertyLength = model.longestPropertyKeyLength()
 

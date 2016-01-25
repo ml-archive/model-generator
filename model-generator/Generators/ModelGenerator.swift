@@ -23,8 +23,8 @@ struct ModelGenerator {
         var model        = try ModelParser.modelFromSourceCode(sourceCode)
         model.properties = try PropertyParser.propertiesFromSourceCode(sourceCode, convertCamelCaseKeys: settings.convertCamelCase)
 
-        let decodableCode = DecodableCodeGenerator.decodableCodeWithModel(model)
-        let encodableCode = EncodableCodeGenerator.encodableCodeWithModel(model)
+        let decodableCode = DecodableCodeGenerator.decodableCodeWithModel(model, useNativeDictionaries: settings.useNativeDictionaries)
+        let encodableCode = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: settings.useNativeDictionaries)
 
         return ExtensionCodeGenerator.extensionCodeWithModel(model, moduleName: nil, andContent: decodableCode + encodableCode)
     }

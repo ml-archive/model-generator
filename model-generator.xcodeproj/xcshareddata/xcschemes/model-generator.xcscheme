@@ -76,6 +76,10 @@
             argument = "-s &quot;struct Test {&#10;    var name = &quot;&quot; //   &lt;-keyName&#10;    var optionalNumber: Double? = 1.0&#10;    //var commentedOut: String?&#10;}&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-n 1"
+            isEnabled = "YES">
+         </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>

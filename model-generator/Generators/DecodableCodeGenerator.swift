@@ -9,12 +9,13 @@
 import Foundation
 
 struct DecodableCodeGenerator {
-    static func decodableCodeWithModel(model: Model) -> String {
+    static func decodableCodeWithModel(model: Model, useNativeDictionaries: Bool) -> String {
         var indent = Indentation(level: 1)
 
         // Create the function signature
         var code = indent.string() + (model.accessLevel == .Public ? "public " : "")
-        code    += (model.type == .Class ? "convenience " : "") + "init(dictionary: NSDictionary?) {\n"
+        code    += (model.type == .Class ? "convenience " : "")
+        code    += (useNativeDictionaries ? "init(dictionary: [String: AnyObject]?) {\n" : "init(dictionary: NSDictionary?) {\n")
 
         // Increase indent level
         indent = indent.nextLevel()
