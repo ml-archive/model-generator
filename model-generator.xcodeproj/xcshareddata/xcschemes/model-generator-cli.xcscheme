@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0169B8A81C567AA400ADF94F"
-               BuildableName = "ModelGenerator.framework"
-               BlueprintName = "ModelGenerator"
+               BlueprintIdentifier = "0142C6991C4E9099004FBF93"
+               BuildableName = "model-generator-cli"
+               BlueprintName = "model-generator-cli"
                ReferencedContainer = "container:model-generator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,25 +26,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "NO">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0142C6C51C4EB94B004FBF93"
-               BuildableName = "model-generator-tests.xctest"
-               BlueprintName = "model-generator-tests"
-               ReferencedContainer = "container:model-generator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0169B8A81C567AA400ADF94F"
-            BuildableName = "ModelGenerator.framework"
-            BlueprintName = "ModelGenerator"
+            BlueprintIdentifier = "0142C6991C4E9099004FBF93"
+            BuildableName = "model-generator-cli"
+            BlueprintName = "model-generator-cli"
             ReferencedContainer = "container:model-generator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,15 +51,26 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0169B8A81C567AA400ADF94F"
-            BuildableName = "ModelGenerator.framework"
-            BlueprintName = "ModelGenerator"
+            BlueprintIdentifier = "0142C6991C4E9099004FBF93"
+            BuildableName = "model-generator-cli"
+            BlueprintName = "model-generator-cli"
             ReferencedContainer = "container:model-generator.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-s &quot;struct Test {&#10;    var name = &quot;&quot; //   &lt;-keyName&#10;    var optionalNumber: Double? = 1.0&#10;    //var commentedOut: String?&#10;}&quot;"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-n 1"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,15 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0169B8A81C567AA400ADF94F"
-            BuildableName = "ModelGenerator.framework"
-            BlueprintName = "ModelGenerator"
+            BlueprintIdentifier = "0142C6991C4E9099004FBF93"
+            BuildableName = "model-generator-cli"
+            BlueprintName = "model-generator-cli"
             ReferencedContainer = "container:model-generator.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
