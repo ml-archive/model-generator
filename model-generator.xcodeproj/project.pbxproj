@@ -10,29 +10,24 @@
 		010C441C1C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44161C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift */; };
 		010C441D1C54DCF8003E764F /* IndentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44181C54DCF8003E764F /* IndentationTests.swift */; };
 		010C441E1C54DCF8003E764F /* ModelParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C441A1C54DCF8003E764F /* ModelParserTests.swift */; };
-		0142C69E1C4E9099004FBF93 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C69D1C4E9099004FBF93 /* main.swift */; };
 		0142C6D01C4EB9B8004FBF93 /* ModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6BE1C4E9AD7004FBF93 /* ModelGenerator.swift */; };
 		0142C6D11C4EB9B8004FBF93 /* ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B91C4E9ABA004FBF93 /* ModelParser.swift */; };
 		0142C6D21C4EB9B8004FBF93 /* PropertyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6BB1C4E9AC3004FBF93 /* PropertyParser.swift */; };
 		0142C6D31C4EB9B8004FBF93 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B21C4E992E004FBF93 /* Model.swift */; };
 		0142C6D41C4EB9B8004FBF93 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B41C4E9934004FBF93 /* Property.swift */; };
 		0142C6D51C4EB9B8004FBF93 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6C01C4EB4E8004FBF93 /* Extensions.swift */; };
-		0142C6D61C4EB9B8004FBF93 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C69D1C4E9099004FBF93 /* main.swift */; };
 		0142C6D71C4EB9B8004FBF93 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AA1C4E9425004FBF93 /* CommandLine.swift */; };
 		0142C6D81C4EB9B8004FBF93 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AC1C4E9425004FBF93 /* Option.swift */; };
 		0142C6D91C4EB9B8004FBF93 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AD1C4E9425004FBF93 /* StringExtensions.swift */; };
 		0142C6DF1C4ECA94004FBF93 /* DecodableCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */; };
 		0142C6E01C4ECA96004FBF93 /* EncodableCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6DB1C4ECA8A004FBF93 /* EncodableCodeGenerator.swift */; };
 		0142C6E31C4ECD36004FBF93 /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
-		0142C6E71C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */; };
-		0142C6E81C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */; };
 		0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
 		0169B88A1C55409000ADF94F /* PropertyParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8891C55409000ADF94F /* PropertyParserTests.swift */; };
 		0169B88E1C5544C700ADF94F /* PropertyParserTest1 in Resources */ = {isa = PBXBuildFile; fileRef = 0169B88C1C5543A200ADF94F /* PropertyParserTest1 */; };
 		0169B8941C56678900ADF94F /* DecodableCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8931C56678900ADF94F /* DecodableCodeGeneratorTests.swift */; };
 		0169B8961C56679200ADF94F /* EncodableCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8951C56679200ADF94F /* EncodableCodeGeneratorTests.swift */; };
 		0169B8981C5667AE00ADF94F /* ModelGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8971C5667AE00ADF94F /* ModelGeneratorTests.swift */; };
-		0169B8AC1C567AA400ADF94F /* model-generator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0169B8AB1C567AA400ADF94F /* model-generator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0169B8B11C567AC000ADF94F /* ModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6BE1C4E9AD7004FBF93 /* ModelGenerator.swift */; };
 		0169B8B21C567AC000ADF94F /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
 		0169B8B31C567AC000ADF94F /* DecodableCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */; };
@@ -56,6 +51,8 @@
 		0169B8C81C567C3800ADF94F /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B41C4E9934004FBF93 /* Property.swift */; };
 		0169B8C91C567C3800ADF94F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6C01C4EB4E8004FBF93 /* Extensions.swift */; };
 		0169B8CA1C567C3800ADF94F /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
+		0169B8CD1C567C9200ADF94F /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8CB1C567C9200ADF94F /* ModelGeneratorCLI.swift */; };
+		0169B8CE1C567C9200ADF94F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8CC1C567C9200ADF94F /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,7 +73,6 @@
 		010C44181C54DCF8003E764F /* IndentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentationTests.swift; sourceTree = "<group>"; };
 		010C441A1C54DCF8003E764F /* ModelParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelParserTests.swift; sourceTree = "<group>"; };
 		0142C69A1C4E9099004FBF93 /* model-generator-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "model-generator-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0142C69D1C4E9099004FBF93 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = "model-generator/main.swift"; sourceTree = "<group>"; };
 		0142C6AA1C4E9425004FBF93 /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		0142C6AC1C4E9425004FBF93 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		0142C6AD1C4E9425004FBF93 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -90,7 +86,6 @@
 		0142C6DB1C4ECA8A004FBF93 /* EncodableCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableCodeGenerator.swift; sourceTree = "<group>"; };
 		0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableCodeGenerator.swift; sourceTree = "<group>"; };
 		0142C6E11C4ECD36004FBF93 /* Indentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indentation.swift; sourceTree = "<group>"; };
-		0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelGeneratorCLI.swift; path = "model-generator/ModelGeneratorCLI.swift"; sourceTree = "<group>"; };
 		0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCodeGenerator.swift; sourceTree = "<group>"; };
 		0169B8891C55409000ADF94F /* PropertyParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyParserTests.swift; sourceTree = "<group>"; };
 		0169B88C1C5543A200ADF94F /* PropertyParserTest1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PropertyParserTest1; sourceTree = "<group>"; };
@@ -98,8 +93,10 @@
 		0169B8951C56679200ADF94F /* EncodableCodeGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableCodeGeneratorTests.swift; sourceTree = "<group>"; };
 		0169B8971C5667AE00ADF94F /* ModelGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelGeneratorTests.swift; sourceTree = "<group>"; };
 		0169B8A91C567AA400ADF94F /* ModelGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModelGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0169B8AB1C567AA400ADF94F /* model-generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "model-generator.h"; path = "../model-generator.h"; sourceTree = "<group>"; };
-		0169B8AD1C567AA400ADF94F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		0169B8CB1C567C9200ADF94F /* ModelGeneratorCLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelGeneratorCLI.swift; sourceTree = "<group>"; };
+		0169B8CC1C567C9200ADF94F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0169B8CF1C567CA000ADF94F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0169B8D01C567CA000ADF94F /* model-generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "model-generator.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,8 +253,8 @@
 		0142C6BF1C4EB4DF004FBF93 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				0169B8AB1C567AA400ADF94F /* model-generator.h */,
-				0169B8AD1C567AA400ADF94F /* Info.plist */,
+				0169B8CF1C567CA000ADF94F /* Info.plist */,
+				0169B8D01C567CA000ADF94F /* model-generator.h */,
 				0142C6C01C4EB4E8004FBF93 /* Extensions.swift */,
 				0142C6E11C4ECD36004FBF93 /* Indentation.swift */,
 			);
@@ -285,10 +282,10 @@
 		0169B8BB1C567ADE00ADF94F /* model-generator-cli */ = {
 			isa = PBXGroup;
 			children = (
-				0142C6E61C4ED24F004FBF93 /* ModelGeneratorCLI.swift */,
-				0142C69D1C4E9099004FBF93 /* main.swift */,
+				0169B8CB1C567C9200ADF94F /* ModelGeneratorCLI.swift */,
+				0169B8CC1C567C9200ADF94F /* main.swift */,
 			);
-			name = "model-generator-cli";
+			path = "model-generator-cli";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +295,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0169B8AC1C567AA400ADF94F /* model-generator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0169B8CD1C567C9200ADF94F /* ModelGeneratorCLI.swift in Sources */,
 				0169B8C11C567C3800ADF94F /* ModelGenerator.swift in Sources */,
 				0169B8C21C567C3800ADF94F /* ExtensionCodeGenerator.swift in Sources */,
 				0169B8C31C567C3800ADF94F /* DecodableCodeGenerator.swift in Sources */,
@@ -430,11 +427,10 @@
 				0169B8C81C567C3800ADF94F /* Property.swift in Sources */,
 				0169B8C91C567C3800ADF94F /* Extensions.swift in Sources */,
 				0169B8CA1C567C3800ADF94F /* Indentation.swift in Sources */,
+				0169B8CE1C567C9200ADF94F /* main.swift in Sources */,
 				0169B8BC1C567BD000ADF94F /* CommandLine.swift in Sources */,
 				0169B8BD1C567BD000ADF94F /* Option.swift in Sources */,
 				0169B8BE1C567BD000ADF94F /* StringExtensions.swift in Sources */,
-				0142C6E71C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */,
-				0142C69E1C4E9099004FBF93 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +443,6 @@
 				0142C6D01C4EB9B8004FBF93 /* ModelGenerator.swift in Sources */,
 				010C441D1C54DCF8003E764F /* IndentationTests.swift in Sources */,
 				0142C6D11C4EB9B8004FBF93 /* ModelParser.swift in Sources */,
-				0142C6E81C4ED24F004FBF93 /* ModelGeneratorCLI.swift in Sources */,
 				0142C6D21C4EB9B8004FBF93 /* PropertyParser.swift in Sources */,
 				0142C6D31C4EB9B8004FBF93 /* Model.swift in Sources */,
 				0169B88A1C55409000ADF94F /* PropertyParserTests.swift in Sources */,
@@ -456,7 +451,6 @@
 				010C441E1C54DCF8003E764F /* ModelParserTests.swift in Sources */,
 				0142C6D41C4EB9B8004FBF93 /* Property.swift in Sources */,
 				0142C6D51C4EB9B8004FBF93 /* Extensions.swift in Sources */,
-				0142C6D61C4EB9B8004FBF93 /* main.swift in Sources */,
 				010C441C1C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift in Sources */,
 				0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */,
 				0169B8981C5667AE00ADF94F /* ModelGeneratorTests.swift in Sources */,
@@ -621,7 +615,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "model-generator/Info.plist";
+				INFOPLIST_FILE = "model-generator/Support/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nodes.model-generator";
@@ -642,7 +636,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "model-generator/Info.plist";
+				INFOPLIST_FILE = "model-generator/Support/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nodes.model-generator";
