@@ -10,27 +10,116 @@ import XCTest
 
 class EncodableCodeGeneratorTests: XCTestCase {
 
-    func testExtensionCode() {
-        let model = Model(name: "SomeModel", type: .Struct, accessLevel: .Private, properties: [])
-        let code = ExtensionCodeGenerator.extensionCodeWithModel(model, moduleName: nil, andContent: "    var myVar: String?\n    let myConst = 0\n\n    init() {\n        super.init()\n}")
+    func testStructEncodableCode() {
+        var model = Model(name: "SomeModel", type: .Struct, accessLevel: .Private, properties: [])
+        model.properties = [
+            Property(
+                name: "firstProperty",
+                key: nil,
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: true),
+            Property(
+                name: "secondProperty",
+                key: "this_isADifferentKey",
+                isOptional:  false,
+                isPrimitiveType: true,
+                hasDefaultValue: false),
+            Property(
+                name: "thirdProperty",
+                key: nil,
+                isOptional:  true,
+                isPrimitiveType: true,
+                hasDefaultValue: false)]
 
-        XCTAssertEqual(code, "extension SomeModel: Serializable {\n    var myVar: String?\n    let myConst = 0\n\n    init() {\n        super.init()\n}\n}",
-            "Extension code generated with custom module name is not correct.")
+        let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: false)
+
+        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        dict[\"firstProperty\"]        = firstProperty?.encodableRepresentation()\n        dict[\"this_isADifferentKey\"] = secondProperty\n        dict[\"thirdProperty\"]        = thirdProperty\n        return dict\n    }",
+            "Encodable code generated for struct is not correct.")
     }
 
-    func testNoContentExtensionCode() {
-        let model = Model(name: "MyModel", type: .Class, accessLevel: .Public, properties: [])
-        let code = ExtensionCodeGenerator.extensionCodeWithModel(model, moduleName: nil, andContent: "")
+    func testClassEncodableCode() {
+        var model = Model(name: "SomeModel", type: .Class, accessLevel: .Private, properties: [])
+        model.properties = [
+            Property(
+                name: "a_property",
+                key: nil,
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: true),
+            Property(
+                name: "fooProperty",
+                key: "this_isADifferentKey",
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: false),
+            Property(
+                name: "barProperty",
+                key: "n",
+                isOptional:  false,
+                isPrimitiveType: false,
+                hasDefaultValue: true)]
 
-        XCTAssertEqual(code, "extension MyModel: Serializable {\n\n}",
-            "Extension code generated with empty content is not correct.")
+        let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: false)
+
+        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        dict[\"a_property\"]           = a_property?.encodableRepresentation()\n        dict[\"this_isADifferentKey\"] = fooProperty?.encodableRepresentation()\n        dict[\"n\"]                    = barProperty.encodableRepresentation()\n        return dict\n    }",
+            "Encodable code generated for class is not correct.")
     }
 
-    func testCustomModuleNameExtensionCode() {
-        let model = Model(name: "YourModel", type: .Struct, accessLevel: .Private, properties: [])
-        let code = ExtensionCodeGenerator.extensionCodeWithModel(model, moduleName: "SomeModule", andContent: "some content\nseparated by new lines\n\n")
+    func testEncodableStructCodeWithNativeDictionaries() {
+        var model = Model(name: "SomeModel", type: .Struct, accessLevel: .Private, properties: [])
+        model.properties = [
+            Property(
+                name: "firstProperty",
+                key: nil,
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: true),
+            Property(
+                name: "secondProperty",
+                key: "this_isADifferentKey",
+                isOptional:  false,
+                isPrimitiveType: true,
+                hasDefaultValue: false),
+            Property(
+                name: "thirdProperty",
+                key: nil,
+                isOptional:  true,
+                isPrimitiveType: true,
+                hasDefaultValue: false)]
 
-        XCTAssertEqual(code, "extension SomeModule.YourModel: Serializable {\nsome content\nseparated by new lines\n\n\n}",
-            "Extension code generated with custom module name is not correct.")
+        let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: true)
+
+        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        var dict = [String: AnyObject]()\n        dict[\"firstProperty\"]        = firstProperty?.encodableRepresentation()\n        dict[\"this_isADifferentKey\"] = secondProperty\n        dict[\"thirdProperty\"]        = thirdProperty\n        return dict\n    }",
+            "Encodable code generated for struct with native dictionaries is not correct.")
     }
+
+    func testEncodableClassCodeWithNativeDictionaries() {
+        var model = Model(name: "SomeModel", type: .Class, accessLevel: .Private, properties: [])
+        model.properties = [
+            Property(
+                name: "a_property",
+                key: nil,
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: true),
+            Property(
+                name: "fooProperty",
+                key: "this_isADifferentKey",
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: false),
+            Property(
+                name: "barProperty",
+                key: "n",
+                isOptional:  false,
+                isPrimitiveType: false,
+                hasDefaultValue: true)]
+
+        let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: true)
+
+        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        var dict = [String: AnyObject]()\n        dict[\"a_property\"]           = a_property?.encodableRepresentation()\n        dict[\"this_isADifferentKey\"] = fooProperty?.encodableRepresentation()\n        dict[\"n\"]                    = barProperty.encodableRepresentation()\n        return dict\n    }",
+            "Encodable code generated for class with native dictionaries is not correct.")
+    }
+
 }
