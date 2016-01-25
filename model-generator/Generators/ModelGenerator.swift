@@ -8,14 +8,20 @@
 
 import Foundation
 
+struct ModelGeneratorSettings {
+    var moduleName: String?
+    var convertCamelCase: Bool = false
+    var useNativeDictionaries: Bool = false
+}
+
 protocol ModelGeneratorErrorType: ErrorType {
     func description() -> String
 }
 
 struct ModelGenerator {
-    static func modelCodeFromSourceCode(sourceCode: String, withModuleName moduleName: String? = nil) throws -> String {
+    static func modelCodeFromSourceCode(sourceCode: String, withSettings settings: ModelGeneratorSettings) throws -> String {
         var model        = try ModelParser.modelFromSourceCode(sourceCode)
-        model.properties = try PropertyParser.propertiesFromSourceCode(sourceCode)
+        model.properties = try PropertyParser.propertiesFromSourceCode(sourceCode, convertCamelCaseKeys: settings.convertCamelCase)
 
         let decodableCode = DecodableCodeGenerator.decodableCodeWithModel(model)
         let encodableCode = EncodableCodeGenerator.encodableCodeWithModel(model)

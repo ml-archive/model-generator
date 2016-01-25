@@ -56,14 +56,21 @@ public final class ModelGeneratorCLI: CommandLine {
     }
 
     private func generateCode() {
+        // If no source code provided, then exit
         guard let code = sourceCode.value else {
             exit(EX_NOINPUT)
         }
 
         print("INPUT:\n", sourceCode.value, "\n\n")
 
+        // Create the generator settings
+        var settings = ModelGeneratorSettings()
+        settings.convertCamelCase      = camelCaseConversion.value
+        settings.useNativeDictionaries = nativeDictionaries.value
+        settings.moduleName            = moduleName.value
+
         do {
-            let modelCode = try ModelGenerator.modelCodeFromSourceCode(code)
+            let modelCode = try ModelGenerator.modelCodeFromSourceCode(code, withSettings: settings)
             print("OUTPUT:\n\(modelCode)\n\n")
             exit(EX_OK)
         } catch {
