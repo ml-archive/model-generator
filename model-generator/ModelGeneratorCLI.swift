@@ -28,7 +28,7 @@ public final class ModelGeneratorCLI: CommandLine {
         required: false,
         helpMessage: "Optionally use native swift dictionaries instead of NSDictionary in generated model code.")
 
-    let camelCaseConversion = BoolOption(
+    let noCamelCaseConversion = BoolOption(
         shortFlag: "c",
         longFlag: "no-convert-camel-case",
         required: false,
@@ -36,7 +36,7 @@ public final class ModelGeneratorCLI: CommandLine {
 
     public init() {
         super.init()
-        addOptions(sourceCode, moduleName, nativeDictionaries, camelCaseConversion)
+        addOptions(sourceCode, moduleName, nativeDictionaries, noCamelCaseConversion)
     }
 
     public func run() {
@@ -65,7 +65,7 @@ public final class ModelGeneratorCLI: CommandLine {
 
         // Create the generator settings
         var settings = ModelGeneratorSettings()
-        settings.convertCamelCase      = camelCaseConversion.value
+        settings.noConvertCamelCase    = noCamelCaseConversion.value
         settings.useNativeDictionaries = nativeDictionaries.value
         settings.moduleName            = moduleName.value
 

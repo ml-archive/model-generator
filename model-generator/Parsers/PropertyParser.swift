@@ -25,7 +25,7 @@ enum PropertyParserError: ModelGeneratorErrorType {
 }
 
 struct PropertyParser {
-    static func propertiesFromSourceCode(sourceCode: String, convertCamelCaseKeys: Bool) throws -> [Property] {
+    static func propertiesFromSourceCode(sourceCode: String, noConvertCamelCaseKeys: Bool) throws -> [Property] {
         let modelBody = try PropertyParser.modelBodyFromSourceCode(sourceCode)
         let lines = modelBody.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
 
@@ -86,7 +86,7 @@ struct PropertyParser {
             if let keyMatch = PropertyParser.keyOverrideRegex?.firstMatchInString(line) {
                 propertyKey = line.substringWithRange(keyMatch.range).trimCharacters(" <-")
             } else {
-                propertyKey = convertCamelCaseKeys ? propertyName.camelCaseToUnderscore() : nil
+                propertyKey = noConvertCamelCaseKeys ? nil : propertyName.camelCaseToUnderscore()
             }
 
             // Finally construct the property

@@ -10,7 +10,7 @@ import Foundation
 
 struct ModelGeneratorSettings {
     var moduleName: String?
-    var convertCamelCase: Bool = false
+    var noConvertCamelCase: Bool = false
     var useNativeDictionaries: Bool = false
 }
 
@@ -21,7 +21,7 @@ protocol ModelGeneratorErrorType: ErrorType {
 struct ModelGenerator {
     static func modelCodeFromSourceCode(sourceCode: String, withSettings settings: ModelGeneratorSettings) throws -> String {
         var model        = try ModelParser.modelFromSourceCode(sourceCode)
-        model.properties = try PropertyParser.propertiesFromSourceCode(sourceCode, convertCamelCaseKeys: settings.convertCamelCase)
+        model.properties = try PropertyParser.propertiesFromSourceCode(sourceCode, noConvertCamelCaseKeys: settings.noConvertCamelCase)
 
         let decodableCode = DecodableCodeGenerator.decodableCodeWithModel(model, useNativeDictionaries: settings.useNativeDictionaries)
         let encodableCode = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: settings.useNativeDictionaries)
