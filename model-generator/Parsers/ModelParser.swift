@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ModelParserError: ModelGeneratorErrorType {
+public enum ModelParserError: ModelGeneratorErrorType {
     case ClassShouldBeDeclaredAsFinal
 
     case MultipleStructDeclarationsFound
@@ -17,7 +17,7 @@ enum ModelParserError: ModelGeneratorErrorType {
 
     case NoModelNameFound
 
-    func description() -> String {
+    public func description() -> String {
         switch self {
         case .ClassShouldBeDeclaredAsFinal:
             return "A class has to be defined as final."

@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum PropertyParserError: ModelGeneratorErrorType {
+public enum PropertyParserError: ModelGeneratorErrorType {
     case GeneralError
     case NoModelBodyDeclarationFound
     case MultipleModelBodyDeclarationsFound
     case NoTypeOrValueSpecified
 
-    func description() -> String {
+    public func description() -> String {
         switch self {
         case .GeneralError: return "General Error"
         case .NoModelBodyDeclarationFound: return "No Model Body Declaration Found"
