@@ -16,8 +16,8 @@ public struct ModelGeneratorSettings {
     public init() {}
 }
 
-protocol ModelGeneratorErrorType: ErrorType {
-    func description() -> String
+public protocol ModelGeneratorErrorType: ErrorType {
+    public func description() -> String
 }
 
 public struct ModelGenerator {
