@@ -29,11 +29,17 @@ struct EncodableCodeGenerator {
         // Generate encodable code for each property
         for property in model.properties {
             let keyCharactersCount = property.key?.characters.count ?? property.name.characters.count
-
-            code += indent.string() + "dict[\"\(property.key ?? property.name)\"]"
-            code += maxPropertyLength > keyCharactersCount ? String.repeated(" ", count: maxPropertyLength - keyCharactersCount) : ""
-            code += " = \(property.name)"
-            code += property.isPrimitiveType ? "" : "\(property.isOptional ? "?" : "").encodableRepresentation()"
+            code += indent.string()
+            if useNativeDictionaries {
+                code += "dict[\"\(property.key ?? property.name)\"]"
+                code += maxPropertyLength > keyCharactersCount ? String.repeated(" ", count: maxPropertyLength - keyCharactersCount) : ""
+                code += " = \(property.name)"
+                code += property.isPrimitiveType ? "" : "\(property.isOptional ? "?" : "").encodableRepresentation()"
+            } else {
+                code += "(dict, \"\(property.key ?? property.name)\")"
+                code += maxPropertyLength > keyCharactersCount ? String.repeated(" ", count: maxPropertyLength - keyCharactersCount) : ""
+                code += " <== \(property.name)"
+            }
             code += "\n"
         }
 
