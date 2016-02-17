@@ -158,7 +158,7 @@ extension PropertyParser {
     static var propertyTypeRegex: NSRegularExpression? {
         do {
             let regex = try NSRegularExpression(
-                pattern: "(?<=\\:)(?:[ ]*)([^\\s]*)(?:[ ]*)(?=\\=)",
+                pattern: "(?<=\\:)(?:[ ]*)([^\\s]*[?])|(?<=\\:)(?:[ ]*)([^\\s]*)(?=[ ]*\\=)",
                 options: NSRegularExpressionOptions(rawValue: 0))
             return regex
         } catch {

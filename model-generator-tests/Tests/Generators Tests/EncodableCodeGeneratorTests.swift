@@ -34,7 +34,7 @@ class EncodableCodeGeneratorTests: XCTestCase {
 
         let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: false)
 
-        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        dict[\"firstProperty\"]        = firstProperty?.encodableRepresentation()\n        dict[\"this_isADifferentKey\"] = secondProperty\n        dict[\"thirdProperty\"]        = thirdProperty\n        return dict\n    }",
+        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        (dict, \"firstProperty\")        <== firstProperty\n        (dict, \"this_isADifferentKey\") <== secondProperty\n        (dict, \"thirdProperty\")        <== thirdProperty\n        return dict\n    }",
             "Encodable code generated for struct is not correct.")
     }
 
@@ -62,7 +62,7 @@ class EncodableCodeGeneratorTests: XCTestCase {
 
         let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: false)
 
-        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        dict[\"a_property\"]           = a_property?.encodableRepresentation()\n        dict[\"this_isADifferentKey\"] = fooProperty?.encodableRepresentation()\n        dict[\"n\"]                    = barProperty.encodableRepresentation()\n        return dict\n    }",
+        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        (dict, \"a_property\")           <== a_property\n        (dict, \"this_isADifferentKey\") <== fooProperty\n        (dict, \"n\")                    <== barProperty\n        return dict\n    }",
             "Encodable code generated for class is not correct.")
     }
 
