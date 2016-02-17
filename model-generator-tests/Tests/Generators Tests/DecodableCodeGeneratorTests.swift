@@ -34,7 +34,7 @@ class DecodableCodeGeneratorTests: XCTestCase {
 
         let code = DecodableCodeGenerator.decodableCodeWithModel(model, useNativeDictionaries: false)
 
-        XCTAssertEqual(code, "    init(dictionary: NSDictionary?) {\n        firstProperty  = self.mapped(dictionary, key: \"firstProperty\") ?? firstProperty!\n        secondProperty = self.mapped(dictionary, key: \"this_isADifferentKey\")\n        thirdProperty  = self.mapped(dictionary, key: \"thirdProperty\")\n    }\n\n",
+        XCTAssertEqual(code, "    init(dictionary: NSDictionary?) {\n        firstProperty  <== (self, dictionary, \"firstProperty\")\n        secondProperty <== (self, dictionary, \"this_isADifferentKey\")\n        thirdProperty  <== (self, dictionary, \"thirdProperty\")\n    }\n\n",
             "Decodable code generated for struct is not correct.")
     }
 
@@ -62,7 +62,7 @@ class DecodableCodeGeneratorTests: XCTestCase {
 
         let code = DecodableCodeGenerator.decodableCodeWithModel(model, useNativeDictionaries: false)
 
-        XCTAssertEqual(code, "    convenience init(dictionary: NSDictionary?) {\n        self.init()\n        a_property  = self.mapped(dictionary, key: \"a_property\") ?? a_property!\n        fooProperty = self.mapped(dictionary, key: \"this_isADifferentKey\")\n        barProperty = self.mapped(dictionary, key: \"n\") ?? barProperty\n    }\n\n",
+        XCTAssertEqual(code, "    convenience init(dictionary: NSDictionary?) {\n        self.init()\n        a_property  <== (self, dictionary, \"a_property\")\n        fooProperty <== (self, dictionary, \"this_isADifferentKey\")\n        barProperty <== (self, dictionary, \"n\")\n    }\n\n",
             "Decodable code generated for class is not correct.")
     }
 
