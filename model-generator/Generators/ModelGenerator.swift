@@ -31,6 +31,6 @@ public struct ModelGenerator {
         let encodableCode = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: settings.useNativeDictionaries)
 
         // Combine both blocks in an extension block and return it
-        return ExtensionCodeGenerator.extensionCodeWithModel(model, moduleName: nil, andContent: decodableCode + encodableCode)
+        return ExtensionCodeGenerator.extensionCodeWithModel(model, moduleName: settings.moduleName, andContent: decodableCode + encodableCode)
     }
 }
