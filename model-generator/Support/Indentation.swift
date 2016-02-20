@@ -8,25 +8,25 @@
 
 import Foundation
 
-struct Indentation {
-    static let defaultString = String(count: 4, repeatedValue: " " as Character)
+public struct Indentation {
+    public static let defaultString = String(count: 4, repeatedValue: " " as Character)
 
-    let level: Int
-    let customString: String?
+    public let level: Int
+    public let customString: String?
 
-    init(level: Int) {
+    public init(level: Int) {
         self.level = level
         self.customString = nil
     }
 
-    init(level: Int, customString: String?) {
+    public init(level: Int, customString: String?) {
         self.level = level
         self.customString = customString
     }
 }
 
-extension Indentation {
-    func string() -> String {
+public extension Indentation {
+    public func string() -> String {
         var string = ""
         let indent = (customString ?? Indentation.defaultString)
 
@@ -38,12 +38,12 @@ extension Indentation {
     }
 }
 
-extension Indentation {
-    func nextLevel() -> Indentation {
+public extension Indentation {
+    public func nextLevel() -> Indentation {
         return Indentation(level: level + 1, customString: customString)
     }
 
-    func previousLevel() -> Indentation {
+    public func previousLevel() -> Indentation {
         return Indentation(level: level > 0 ? level - 1 : 0, customString: customString)
     }
 }
