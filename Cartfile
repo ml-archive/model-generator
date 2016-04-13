@@ -1,1 +1,2 @@
-github "jatoben/CommandLine"
+github "jatoben/CommandLine" "master"
+
