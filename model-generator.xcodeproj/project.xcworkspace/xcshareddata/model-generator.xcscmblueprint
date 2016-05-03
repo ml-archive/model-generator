@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "212E189745DAD47AE2D45A408B8608303FAA5D12",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "80ADDA5D56BB691485893C6770939DEBBBD20650" : 0,
+    "212E189745DAD47AE2D45A408B8608303FAA5D12" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0EC90422-62A3-41E5-B225-498CF5BC3ACC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "80ADDA5D56BB691485893C6770939DEBBBD20650" : "..\/..",
+    "212E189745DAD47AE2D45A408B8608303FAA5D12" : "model-generator\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "model-generator",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "model-generator.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nodes-ios\/model-generator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "212E189745DAD47AE2D45A408B8608303FAA5D12"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:nodes-ios\/ModelBoiler.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "80ADDA5D56BB691485893C6770939DEBBBD20650"
+    }
+  ]
+}
