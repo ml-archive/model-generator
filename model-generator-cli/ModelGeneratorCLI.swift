@@ -69,9 +69,9 @@ public final class ModelGeneratorCLI: CommandLine {
 
         // Try generating the model and print to stdout if success
         do {
-            let modelCode = try ModelGenerator.modelCodeFromSourceCode(code, withSettings: settings)
-            if let data = modelCode.dataUsingEncoding(NSUTF8StringEncoding) {
-                NSFileHandle.fileHandleWithStandardOutput().writeData(data)
+            let modelCode = try ModelGenerator.modelCodeFromSourceCode(sourceCode: code, withSettings: settings)
+            if let data = modelCode.data(using: String.Encoding.utf8) {
+                FileHandle.standardOutput.write(data)
                 exit(EX_OK)
             } else {
                 exit(EXIT_FAILURE)

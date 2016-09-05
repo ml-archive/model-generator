@@ -35,13 +35,13 @@ public enum ModelParserError: ModelGeneratorErrorType {
 
 struct ModelParser {
     static func modelFromSourceCode(sourceCode: String) throws -> Model {
-        guard let modelType = try ModelParser.modelTypeForSourceCode(sourceCode) else {
+        guard let modelType = try ModelParser.modelTypeForSourceCode(code: sourceCode) else {
             throw ModelParserError.NoStructOrClassDeclarationFound
         }
 
-        let accessLevel = ModelParser.accessLevelForSourceCode(sourceCode)
+        let accessLevel = ModelParser.accessLevelForSourceCode(code: sourceCode)
 
-        guard let name = ModelParser.modelNameForSourceCode(sourceCode) else {
+        guard let name = ModelParser.modelNameForSourceCode(code: sourceCode) else {
             throw ModelParserError.NoModelNameFound
         }
 
@@ -52,20 +52,20 @@ struct ModelParser {
         let range = NSMakeRange(0, code.characters.count)
 
         // Check if struct
-        let structMatches = structRegex?.numberOfMatchesInString(code, options: NSMatchingOptions(rawValue: 0), range: range)
-        if let matches = structMatches where matches == 1 {
+        let structMatches = structRegex?.numberOfMatches(in: code, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: range)
+        if let matches = structMatches , matches == 1 {
             return .Struct
-        } else if let matches = structMatches where matches > 1 {
+        } else if let matches = structMatches , matches > 1 {
             throw ModelParserError.MultipleStructDeclarationsFound
         }
 
         // Check if final class
-        let finalClassMatches = finalClassRegex?.numberOfMatchesInString(code, options: NSMatchingOptions(rawValue: 0), range: range)
-        if let matches = finalClassMatches where matches == 1 {
+        let finalClassMatches = finalClassRegex?.numberOfMatches(in: code, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: range)
+        if let matches = finalClassMatches , matches == 1 {
             return .Class
-        } else if let matches = finalClassMatches where matches > 1 {
+        } else if let matches = finalClassMatches , matches > 1 {
             throw ModelParserError.MultipleClassDeclarationsFound
-        } else if code.containsString(ModelType.Class.rawValue) {
+        } else if code.contains(ModelType.Class.rawValue) {
             throw ModelParserError.ClassShouldBeDeclaredAsFinal
         }
 
@@ -75,11 +75,11 @@ struct ModelParser {
 
     static func modelNameForSourceCode(code: String) -> String? {
         let range = NSMakeRange(0, code.characters.count)
-        let match = modelNameRegex?.firstMatchInString(code, options: NSMatchingOptions(rawValue: 0), range: range)
+        let match = modelNameRegex?.firstMatch(in: code, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: range)
 
         // If we found model name
         if let match = match {
-            return code.substringWithRange(match.range)
+            return code.substringWithRange(range: match.range)
         }
 
         return nil
@@ -87,10 +87,10 @@ struct ModelParser {
 
     static func accessLevelForSourceCode(code: String) -> AccessLevel {
         let range = NSMakeRange(0, code.characters.count)
-        let match = accessLevelRegex?.firstMatchInString(code, options: NSMatchingOptions(rawValue: 0), range: range)
+        let match = accessLevelRegex?.firstMatch(in: code, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: range)
 
         if let match = match {
-            return AccessLevel(rawValue: code.substringWithRange(match.range)) ?? .Internal
+            return AccessLevel(rawValue: code.substringWithRange(range: match.range)) ?? .Internal
         }
         
         return .Internal
@@ -104,7 +104,7 @@ extension ModelParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "final.*class(?=.*\\{)",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create final class regex.")
@@ -116,7 +116,7 @@ extension ModelParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "struct(?=.*\\{)",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create struct regex.")
@@ -128,7 +128,7 @@ extension ModelParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "private(?=.*class|.*struct)(?=.*\\{)|public(?=.*class|.*struct)(?=.*\\{)|internal(?=.*class|.*struct)(?=.*\\{)",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create access level regex.")
@@ -140,7 +140,7 @@ extension ModelParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "\\S+(?=\\s*\\:)|\\S+(?=\\s*\\{)",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create model name regex.")

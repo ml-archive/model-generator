@@ -32,12 +32,12 @@ struct EncodableCodeGenerator {
             code += indent.string()
             if useNativeDictionaries {
                 code += "dict[\"\(property.key ?? property.name)\"]"
-                code += maxPropertyLength > keyCharactersCount ? String.repeated(" ", count: maxPropertyLength - keyCharactersCount) : ""
+                code += maxPropertyLength > keyCharactersCount ? String.repeated(character: " ", count: maxPropertyLength - keyCharactersCount) : ""
                 code += " = \(property.name)"
                 code += property.isPrimitiveType ? "" : "\(property.isOptional ? "?" : "").encodableRepresentation()"
             } else {
                 code += "(dict, \"\(property.key ?? property.name)\")"
-                code += maxPropertyLength > keyCharactersCount ? String.repeated(" ", count: maxPropertyLength - keyCharactersCount) : ""
+                code += maxPropertyLength > keyCharactersCount ? String.repeated(character: " ", count: maxPropertyLength - keyCharactersCount) : ""
                 code += " <== \(property.name)"
             }
             code += "\n"

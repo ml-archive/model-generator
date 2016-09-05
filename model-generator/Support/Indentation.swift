@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Indentation {
-    public static let defaultString = String(count: 4, repeatedValue: " " as Character)
+    public static let defaultString = String(repeating: " ", count: 4)
 
     public let level: Int
     public let customString: String?

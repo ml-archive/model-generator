@@ -31,7 +31,7 @@ struct DecodableCodeGenerator {
         // Generate the properties
         for property in model.properties {
             code += indent.string() + property.name
-            code += String(count:maxPropertyLength - property.name.characters.count, repeatedValue:" " as Character)
+            code += String(repeating:" ", count:maxPropertyLength - property.name.characters.count)
             if useNativeDictionaries {
                 code += " = self.mapped(dictionary, key: \"\(property.key ?? property.name)\")"
                 code += property.hasDefaultValue ? (" ?? \(property.name)\(property.isOptional ? "!" : "")") : ""

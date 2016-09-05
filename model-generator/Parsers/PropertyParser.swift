@@ -26,8 +26,8 @@ public enum PropertyParserError: ModelGeneratorErrorType {
 
 struct PropertyParser {
     static func propertiesFromSourceCode(sourceCode: String, noConvertCamelCaseKeys: Bool) throws -> [Property] {
-        let modelBody = try PropertyParser.modelBodyFromSourceCode(sourceCode)
-        let lines = modelBody.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+        let modelBody = try PropertyParser.modelBodyFromSourceCode(sourceCode: sourceCode)
+        let lines = modelBody.components(separatedBy: NSCharacterSet.newlines)
 
         var properties: [Property] = []
 
@@ -40,28 +40,28 @@ struct PropertyParser {
             if trimmedLine.hasPrefix("//") { continue }
 
             // Check if line contains forbidden var types
-            let invalidMatches = PropertyParser.invalidPropertyRegex?.numberOfMatchesInString(line)
-            if let matches = invalidMatches where matches > 0 { continue }
+            let invalidMatches = PropertyParser.invalidPropertyRegex?.numberOfMatchesInString(string: line)
+            if let matches = invalidMatches , matches > 0 { continue }
 
             // Get property name
-            guard let propertyNameMatch = PropertyParser.propertyNameRegex?.firstMatchInString(line) else { continue }
-            let propertyName = line.substringWithRange(propertyNameMatch.range)
+            guard let propertyNameMatch = PropertyParser.propertyNameRegex?.firstMatchInString(string: line) else { continue }
+            let propertyName = line.substringWithRange(range: propertyNameMatch.range)
 
             let hasType: Bool
             let isOptional: Bool
             var isPrimitive = false
 
             // Figure out type of property
-            let propertyTypeMatch = PropertyParser.propertyTypeRegex?.firstMatchInString(line)
+            let propertyTypeMatch = PropertyParser.propertyTypeRegex?.firstMatchInString(string: line)
             if let range = propertyTypeMatch?.range {
                 hasType = true
 
                 // Check if optional
-                let type = line.substringWithRange(range)
-                isOptional = type.containsString("?")
+                let type = line.substringWithRange(range: range)
+                isOptional = type.contains("?")
 
                 // Check if primitive type
-                let pureType = type.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "?! "))
+                let pureType = type.trimmingCharacters(in: NSCharacterSet(charactersIn: "?! ") as CharacterSet)
                 isPrimitive = Property.primitiveTypes.contains(pureType)
             } else {
                 hasType = false
@@ -69,12 +69,12 @@ struct PropertyParser {
             }
 
             // Check if property has default value
-            let hasValue = (PropertyParser.containsValueRegex?.firstMatchInString(line) != nil)
+            let hasValue = (PropertyParser.containsValueRegex?.firstMatchInString(string: line) != nil)
             if !hasType && !hasValue { throw PropertyParserError.NoTypeOrValueSpecified }
 
             // Check if value is primitive, if property doesn't have a type
             if !isPrimitive && !hasType {
-                if let primitiveMatches = PropertyParser.primitiveValueRegex?.numberOfMatchesInString(line) where primitiveMatches > 0 {
+                if let primitiveMatches = PropertyParser.primitiveValueRegex?.numberOfMatchesInString(string: line) , primitiveMatches > 0 {
                     isPrimitive = true
                 } else {
                     isPrimitive = false
@@ -83,8 +83,8 @@ struct PropertyParser {
 
             // Find the override key if it exists
             let propertyKey: String?
-            if let keyMatch = PropertyParser.keyOverrideRegex?.firstMatchInString(line) {
-                propertyKey = line.substringWithRange(keyMatch.range).trimCharacters(" <-")
+            if let keyMatch = PropertyParser.keyOverrideRegex?.firstMatchInString(string: line) {
+                propertyKey = line.substringWithRange(range: keyMatch.range).trimCharacters(inString: " <-")
             } else {
                 propertyKey = noConvertCamelCaseKeys ? nil : propertyName.camelCaseToUnderscore()
             }
@@ -104,14 +104,14 @@ struct PropertyParser {
     }
 
     static func modelBodyFromSourceCode(sourceCode: String) throws -> String {
-        let matches = PropertyParser.modelBodyRegex?.matchesInString(sourceCode, options: NSMatchingOptions(rawValue: 0), range: sourceCode.range)
+        let matches = PropertyParser.modelBodyRegex?.matches(in: sourceCode, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: sourceCode.range)
 
-        if let matches = matches, first = matches.first {
+        if let matches = matches, let first = matches.first {
             if matches.count > 1 {
                 throw PropertyParserError.MultipleModelBodyDeclarationsFound
             }
 
-            return sourceCode.substringWithRange(first.range)
+            return sourceCode.substringWithRange(range: first.range)
         }
 
         throw PropertyParserError.NoModelBodyDeclarationFound
@@ -123,7 +123,7 @@ extension PropertyParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "struct.*\\{(.*)\\}|class.*\\{(.*)\\}",
-                options: [.DotMatchesLineSeparators])
+                options: [.dotMatchesLineSeparators])
             return regex
         } catch {
             print("Couldn't create model body regex.")
@@ -135,7 +135,7 @@ extension PropertyParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "(?:static|override|class)+[ ]+(?:public|internal|private)?[ ]+var",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create invalid property regex.")
@@ -147,7 +147,7 @@ extension PropertyParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "(?<=var )[ ]*([^\\s]*)(?=[ ]*\\:)|(?<=var )[ ]*([^\\s]*)(?=[ ]*\\=)",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create property name regex.")
@@ -159,7 +159,7 @@ extension PropertyParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "(?<=\\:)(?:[ ]*)([^\\s]*[?])|(?<=\\:)(?:[ ]*)([^\\s]*)(?=[ ]*\\=)",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create property type regex.")
@@ -171,7 +171,7 @@ extension PropertyParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "(?<!=\\/\\/)[ ]+(=)[ ]+",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create property contains value regex.")
@@ -183,7 +183,7 @@ extension PropertyParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "(?>\\=[ ]*)(\".*\")|(?>\\=[ ]*)([0-9\\.\\-]+)|(?>\\=[ ]*)(true|false)",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create property primitive value regex.")
@@ -195,7 +195,7 @@ extension PropertyParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "(?<=\\/\\/)[ ]*\\<\\-[ ]*([^\\s]+)[ ]*",
-                options: NSRegularExpressionOptions(rawValue: 0))
+                options: NSRegularExpression.Options(rawValue: 0))
             return regex
         } catch {
             print("Couldn't create property key override regex.")

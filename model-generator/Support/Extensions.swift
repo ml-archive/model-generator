@@ -10,11 +10,11 @@ import Foundation
 
 extension String {
     static func repeated(character: Character, count: Int) -> String {
-        return String(count: count, repeatedValue: character)
+        return String(repeating: "\(character)", count: count)
     }
 
     func substringWithRange(range: NSRange) -> String {
-        return (self as NSString).substringWithRange(range)
+        return (self as NSString).substring(with: range)
     }
 
     var range: NSRange {
@@ -24,11 +24,11 @@ extension String {
     }
 
     func trimWhitespace() -> String {
-        return stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        return trimmingCharacters(in: NSCharacterSet.whitespaces as CharacterSet)
     }
 
     func trimCharacters(inString: String) -> String {
-        return stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: inString))
+        return trimmingCharacters(in: NSCharacterSet(charactersIn: inString) as CharacterSet)
     }
 
     func camelCaseToUnderscore() -> String {
@@ -36,7 +36,7 @@ extension String {
 
         let characterArray = Array(returnString.characters).map { (character) -> String in
             let inputCharacterString = String(character)
-            let lowerCaseCharacterString = String(character).lowercaseString
+            let lowerCaseCharacterString = String(character).lowercased()
 
             if inputCharacterString != lowerCaseCharacterString {
                 return "_" + lowerCaseCharacterString
@@ -55,10 +55,10 @@ extension String {
 
 extension NSRegularExpression {
     public func numberOfMatchesInString(string: String) -> Int {
-        return numberOfMatchesInString(string, options: NSMatchingOptions(rawValue: 0), range: string.range)
+        return numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: string.range)
     }
 
     public func firstMatchInString(string: String) -> NSTextCheckingResult? {
-        return firstMatchInString(string, options: NSMatchingOptions(rawValue: 0), range: string.range)
+        return firstMatch(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: string.range)
     }
 }
