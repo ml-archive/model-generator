@@ -32,7 +32,7 @@ class EncodableCodeGeneratorTests: XCTestCase {
                 isPrimitiveType: true,
                 hasDefaultValue: false)]
 
-        let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: false)
+        let code = EncodableCodeGenerator.encodableCode(withModel: model, useNativeDictionaries: false)
 
         XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        (dict, \"firstProperty\")        <== firstProperty\n        (dict, \"this_isADifferentKey\") <== secondProperty\n        (dict, \"thirdProperty\")        <== thirdProperty\n        return dict\n    }",
             "Encodable code generated for struct is not correct.")
@@ -60,7 +60,7 @@ class EncodableCodeGeneratorTests: XCTestCase {
                 isPrimitiveType: false,
                 hasDefaultValue: true)]
 
-        let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: false)
+        let code = EncodableCodeGenerator.encodableCode(withModel: model, useNativeDictionaries: false)
 
         XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        (dict, \"a_property\")           <== a_property\n        (dict, \"this_isADifferentKey\") <== fooProperty\n        (dict, \"n\")                    <== barProperty\n        return dict\n    }",
             "Encodable code generated for class is not correct.")
@@ -88,7 +88,7 @@ class EncodableCodeGeneratorTests: XCTestCase {
                 isPrimitiveType: true,
                 hasDefaultValue: false)]
 
-        let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: true)
+        let code = EncodableCodeGenerator.encodableCode(withModel: model, useNativeDictionaries: true)
 
         XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        var dict = [String: AnyObject]()\n        dict[\"firstProperty\"]        = firstProperty?.encodableRepresentation()\n        dict[\"this_isADifferentKey\"] = secondProperty\n        dict[\"thirdProperty\"]        = thirdProperty\n        return dict\n    }",
             "Encodable code generated for struct with native dictionaries is not correct.")
@@ -116,7 +116,7 @@ class EncodableCodeGeneratorTests: XCTestCase {
                 isPrimitiveType: false,
                 hasDefaultValue: true)]
 
-        let code = EncodableCodeGenerator.encodableCodeWithModel(model, useNativeDictionaries: true)
+        let code = EncodableCodeGenerator.encodableCode(withModel: model, useNativeDictionaries: true)
 
         XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        var dict = [String: AnyObject]()\n        dict[\"a_property\"]           = a_property?.encodableRepresentation()\n        dict[\"this_isADifferentKey\"] = fooProperty?.encodableRepresentation()\n        dict[\"n\"]                    = barProperty.encodableRepresentation()\n        return dict\n    }",
             "Encodable code generated for class with native dictionaries is not correct.")

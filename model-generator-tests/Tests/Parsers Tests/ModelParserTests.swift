@@ -21,7 +21,7 @@ class ModelParserTests: XCTestCase {
         let testSourceCode = "struct TestStruct: SomeOtherStruct {\nvar name: String?\nvar number: Int = 0\n}"
 
         do {
-            let model = try ModelParser.modelFromSourceCode(testSourceCode)
+            let model = try ModelParser.model(fromSourceCode: testSourceCode)
 
             XCTAssertEqual(model.name, "TestStruct", "Struct name parsing failed.")
             XCTAssertEqual(model.type.rawValue, "struct", "Struct type parsing failed.")
@@ -35,7 +35,7 @@ class ModelParserTests: XCTestCase {
         let testSourceCode = "final private class TestClass: NSObject {\nvar name: String?\nvar number: Int = 0\n}"
 
         do {
-            let model = try ModelParser.modelFromSourceCode(testSourceCode)
+            let model = try ModelParser.model(fromSourceCode: testSourceCode)
 
             XCTAssertEqual(model.name, "TestClass", "Class name parsing failed.")
             XCTAssertEqual(model.type.rawValue, "class", "Class type parsing failed.")
@@ -49,7 +49,7 @@ class ModelParserTests: XCTestCase {
         let testSourceCode = "public class TestClass: NSObject {\nfinal var name: String?\nvar number: Int = 0\n}"
 
         do {
-            try ModelParser.modelFromSourceCode(testSourceCode)
+            _ = try ModelParser.model(fromSourceCode: testSourceCode)
             XCTAssert(false, "Non final class parsing should fail and instead parsed successfully.")
         } catch {
             XCTAssert(true)
@@ -63,28 +63,28 @@ class ModelParserTests: XCTestCase {
         let testFour = "final class TestClass: NSObject {\nprivate var name: String?\nvar number: Int = 0\n}"
 
         do {
-            let model = try ModelParser.modelFromSourceCode(testOne)
+            let model = try ModelParser.model(fromSourceCode: testOne)
             XCTAssertEqual(model.accessLevel, AccessLevel.Public, "Public access level parsing failed.")
         } catch {
             XCTAssert(false, "Class parsing failed: \(error).")
         }
 
         do {
-            let model = try ModelParser.modelFromSourceCode(testTwo)
+            let model = try ModelParser.model(fromSourceCode: testTwo)
             XCTAssertEqual(model.accessLevel, AccessLevel.Internal, "Internal access level parsing failed.")
         } catch {
             XCTAssert(false, "Class parsing failed: \(error).")
         }
 
         do {
-            let model = try ModelParser.modelFromSourceCode(testThree)
+            let model = try ModelParser.model(fromSourceCode: testThree)
             XCTAssertEqual(model.accessLevel, AccessLevel.Private, "Private access level parsing failed.")
         } catch {
             XCTAssert(false, "Struct parsing failed: \(error).")
         }
 
         do {
-            let model = try ModelParser.modelFromSourceCode(testFour)
+            let model = try ModelParser.model(fromSourceCode: testFour)
             XCTAssertEqual(model.accessLevel, AccessLevel.Internal, "Non-explicit internal access level parsing failed.")
         } catch {
             XCTAssert(false, "Class parsing failed: \(error).")
@@ -93,15 +93,15 @@ class ModelParserTests: XCTestCase {
 
     func testStructParsingPerformance() {
         let testSourceCode = "final public class TestClass: NSObject {\nprivate var name: String?\npublic var number: Int = 0\n}"
-        self.measureBlock { () -> Void in
-            try! ModelParser.modelFromSourceCode(testSourceCode)
+        measure {
+            _ = try! ModelParser.model(fromSourceCode: testSourceCode)
         }
     }
 
     func testClassParsingPerformance() {
         let testSourceCode = "private struct TestClass: NSObject {\ninternal var name: String?\nprivate var number: Int = 0\n}"
-        self.measureBlock { () -> Void in
-            try! ModelParser.modelFromSourceCode(testSourceCode)
+        measure {
+            _ = try! ModelParser.model(fromSourceCode: testSourceCode)
         }
     }
 }

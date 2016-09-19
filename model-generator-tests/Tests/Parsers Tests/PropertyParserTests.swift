@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Foundation
 
 class PropertyParserTests: XCTestCase {
 
@@ -21,8 +22,8 @@ class PropertyParserTests: XCTestCase {
     }
 
     func testOptionalPropertyWithDefaultValue() {
-        let testString = try! String(contentsOfFile: NSBundle(forClass: self.dynamicType).pathForResource("PropertyParserTest1", ofType: "")!)
-        let properties = try! PropertyParser.propertiesFromSourceCode(testString, noConvertCamelCaseKeys: true)
+        let testString = try! String(contentsOfFile: Bundle(for: type(of: self)).path(forResource: "PropertyParserTest1", ofType: "")!)
+        let properties = try! PropertyParser.properties(fromSourceCode: testString, noConvertCamelCaseKeys: true)
 
         XCTAssertEqual(properties.count, 2, "Wrong number of properties parsed.")
 

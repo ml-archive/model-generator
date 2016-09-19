@@ -11,7 +11,7 @@ import Foundation
 struct ExtensionCodeGenerator {
     static let protocolName = "Serializable"
 
-    static func extensionCodeWithModel(model: Model, moduleName: String?, andContent content: String) -> String {
+    static func extensionCode(withModel model: Model, moduleName: String?, andContent content: String) -> String {
         var extensionString = "extension "
 
         // If applicable, adds module name and a dot

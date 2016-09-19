@@ -9,7 +9,7 @@
 import Foundation
 
 struct DecodableCodeGenerator {
-    static func decodableCodeWithModel(model: Model, useNativeDictionaries: Bool) -> String {
+    static func decodableCode(withModel model: Model, useNativeDictionaries: Bool) -> String {
         var indent = Indentation(level: 1)
 
         // Create the function signature

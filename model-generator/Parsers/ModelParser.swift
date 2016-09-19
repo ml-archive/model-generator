@@ -34,21 +34,21 @@ public enum ModelParserError: ModelGeneratorErrorType {
 }
 
 struct ModelParser {
-    static func modelFromSourceCode(sourceCode: String) throws -> Model {
-        guard let modelType = try ModelParser.modelTypeForSourceCode(code: sourceCode) else {
+    static func model(fromSourceCode sourceCode: String) throws -> Model {
+        guard let modelType = try ModelParser.modelType(fromSourceCode: sourceCode) else {
             throw ModelParserError.NoStructOrClassDeclarationFound
         }
 
-        let accessLevel = ModelParser.accessLevelForSourceCode(code: sourceCode)
+        let accessLevel = ModelParser.accessLevel(fromSourceCode: sourceCode)
 
-        guard let name = ModelParser.modelNameForSourceCode(code: sourceCode) else {
+        guard let name = ModelParser.modelName(fromSourceCode: sourceCode) else {
             throw ModelParserError.NoModelNameFound
         }
 
         return Model(name: name, type: modelType, accessLevel: accessLevel, properties: [])
     }
 
-    static func modelTypeForSourceCode(code: String) throws -> ModelType? {
+    static func modelType(fromSourceCode code: String) throws -> ModelType? {
         let range = NSMakeRange(0, code.characters.count)
 
         // Check if struct
@@ -73,7 +73,7 @@ struct ModelParser {
         return nil
     }
 
-    static func modelNameForSourceCode(code: String) -> String? {
+    static func modelName(fromSourceCode code: String) -> String? {
         let range = NSMakeRange(0, code.characters.count)
         let match = modelNameRegex?.firstMatch(in: code, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: range)
 
@@ -85,7 +85,7 @@ struct ModelParser {
         return nil
     }
 
-    static func accessLevelForSourceCode(code: String) -> AccessLevel {
+    static func accessLevel(fromSourceCode code: String) -> AccessLevel {
         let range = NSMakeRange(0, code.characters.count)
         let match = accessLevelRegex?.firstMatch(in: code, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: range)
 

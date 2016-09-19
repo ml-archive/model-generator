@@ -25,7 +25,7 @@ public enum PropertyParserError: ModelGeneratorErrorType {
 }
 
 struct PropertyParser {
-    static func propertiesFromSourceCode(sourceCode: String, noConvertCamelCaseKeys: Bool) throws -> [Property] {
+    static func properties(fromSourceCode sourceCode: String, noConvertCamelCaseKeys: Bool) throws -> [Property] {
         let modelBody = try PropertyParser.modelBodyFromSourceCode(sourceCode: sourceCode)
         let lines = modelBody.components(separatedBy: NSCharacterSet.newlines)
 

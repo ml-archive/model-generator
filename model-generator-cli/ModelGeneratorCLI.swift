@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class ModelGeneratorCLI: CommandLine {
+public final class ModelGeneratorCLI: CommandLineKit {
 
     let sourceCode = StringOption(
         shortFlag: "s",
@@ -50,7 +50,7 @@ public final class ModelGeneratorCLI: CommandLine {
         do {
             try parse()
         } catch {
-            printUsage(error)
+            printUsage(error: error)
             exit(EX_USAGE)
         }
     }
@@ -69,7 +69,7 @@ public final class ModelGeneratorCLI: CommandLine {
 
         // Try generating the model and print to stdout if success
         do {
-            let modelCode = try ModelGenerator.modelCodeFromSourceCode(sourceCode: code, withSettings: settings)
+            let modelCode = try ModelGenerator.modelCode(fromSourceCode: code, withSettings: settings)
             if let data = modelCode.data(using: String.Encoding.utf8) {
                 FileHandle.standardOutput.write(data)
                 exit(EX_OK)

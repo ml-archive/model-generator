@@ -22,23 +22,23 @@ public protocol ModelGeneratorErrorType: Error {
 }
 
 public struct ModelGenerator {
-    public static func modelCodeFromSourceCode(sourceCode: String, withSettings settings: ModelGeneratorSettings) throws -> String {
+    public static func modelCode(fromSourceCode sourceCode: String, withSettings settings: ModelGeneratorSettings) throws -> String {
         // Parse the model and its properties first
-        var model        = try ModelParser.modelFromSourceCode(sourceCode: sourceCode)
-        model.properties = try PropertyParser.propertiesFromSourceCode(sourceCode: sourceCode, noConvertCamelCaseKeys: settings.noConvertCamelCase)
+        var model        = try ModelParser.model(fromSourceCode: sourceCode)
+        model.properties = try PropertyParser.properties(fromSourceCode: sourceCode, noConvertCamelCaseKeys: settings.noConvertCamelCase)
         
         // Genereate decodable code block
-        let decodableCode = DecodableCodeGenerator.decodableCodeWithModel(model: model, useNativeDictionaries: settings.useNativeDictionaries)
+        let decodableCode = DecodableCodeGenerator.decodableCode(withModel: model, useNativeDictionaries: settings.useNativeDictionaries)
         
         if settings.onlyCreateInitializer {
             return decodableCode
         }
         
         // Genereate encodable code block
-        let encodableCode = EncodableCodeGenerator.encodableCodeWithModel(model: model, useNativeDictionaries: settings.useNativeDictionaries)
+        let encodableCode = EncodableCodeGenerator.encodableCode(withModel: model, useNativeDictionaries: settings.useNativeDictionaries)
         
         // Combine both blocks in an extension block and return it
-        return ExtensionCodeGenerator.extensionCodeWithModel(model: model, moduleName: settings.moduleName, andContent: decodableCode + encodableCode)
+        return ExtensionCodeGenerator.extensionCode(withModel: model, moduleName: settings.moduleName, andContent: decodableCode + encodableCode)
     }
 }
 

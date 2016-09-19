@@ -16,9 +16,6 @@
 		0142C6D31C4EB9B8004FBF93 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B21C4E992E004FBF93 /* Model.swift */; };
 		0142C6D41C4EB9B8004FBF93 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B41C4E9934004FBF93 /* Property.swift */; };
 		0142C6D51C4EB9B8004FBF93 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6C01C4EB4E8004FBF93 /* Extensions.swift */; };
-		0142C6D71C4EB9B8004FBF93 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AA1C4E9425004FBF93 /* CommandLine.swift */; };
-		0142C6D81C4EB9B8004FBF93 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AC1C4E9425004FBF93 /* Option.swift */; };
-		0142C6D91C4EB9B8004FBF93 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AD1C4E9425004FBF93 /* StringExtensions.swift */; };
 		0142C6DF1C4ECA94004FBF93 /* DecodableCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */; };
 		0142C6E01C4ECA96004FBF93 /* EncodableCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6DB1C4ECA8A004FBF93 /* EncodableCodeGenerator.swift */; };
 		0142C6E31C4ECD36004FBF93 /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
@@ -38,9 +35,6 @@
 		0169B8B81C567AC000ADF94F /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B41C4E9934004FBF93 /* Property.swift */; };
 		0169B8B91C567AC000ADF94F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6C01C4EB4E8004FBF93 /* Extensions.swift */; };
 		0169B8BA1C567AC000ADF94F /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
-		0169B8BC1C567BD000ADF94F /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AA1C4E9425004FBF93 /* CommandLine.swift */; };
-		0169B8BD1C567BD000ADF94F /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AC1C4E9425004FBF93 /* Option.swift */; };
-		0169B8BE1C567BD000ADF94F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6AD1C4E9425004FBF93 /* StringExtensions.swift */; };
 		0169B8C11C567C3800ADF94F /* ModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6BE1C4E9AD7004FBF93 /* ModelGenerator.swift */; };
 		0169B8C21C567C3800ADF94F /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
 		0169B8C31C567C3800ADF94F /* DecodableCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */; };
@@ -53,6 +47,9 @@
 		0169B8CA1C567C3800ADF94F /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
 		0169B8CD1C567C9200ADF94F /* ModelGeneratorCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8CB1C567C9200ADF94F /* ModelGeneratorCLI.swift */; };
 		0169B8CE1C567C9200ADF94F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8CC1C567C9200ADF94F /* main.swift */; };
+		0184A96F1D90134A006B239A /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184A9691D901321006B239A /* CommandLine.swift */; };
+		0184A9701D90134A006B239A /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184A96A1D901321006B239A /* Option.swift */; };
+		0184A9711D90134A006B239A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184A96B1D901321006B239A /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,9 +70,6 @@
 		010C44181C54DCF8003E764F /* IndentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentationTests.swift; sourceTree = "<group>"; };
 		010C441A1C54DCF8003E764F /* ModelParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelParserTests.swift; sourceTree = "<group>"; };
 		0142C69A1C4E9099004FBF93 /* model-generator-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "model-generator-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0142C6AA1C4E9425004FBF93 /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
-		0142C6AC1C4E9425004FBF93 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		0142C6AD1C4E9425004FBF93 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		0142C6B21C4E992E004FBF93 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0142C6B41C4E9934004FBF93 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		0142C6B91C4E9ABA004FBF93 /* ModelParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelParser.swift; sourceTree = "<group>"; };
@@ -97,6 +91,9 @@
 		0169B8CC1C567C9200ADF94F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0169B8CF1C567CA000ADF94F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0169B8D01C567CA000ADF94F /* model-generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "model-generator.h"; sourceTree = "<group>"; };
+		0184A9691D901321006B239A /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
+		0184A96A1D901321006B239A /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		0184A96B1D901321006B239A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,12 +210,12 @@
 		0142C6A91C4E9425004FBF93 /* CommandLine */ = {
 			isa = PBXGroup;
 			children = (
-				0142C6AA1C4E9425004FBF93 /* CommandLine.swift */,
-				0142C6AC1C4E9425004FBF93 /* Option.swift */,
-				0142C6AD1C4E9425004FBF93 /* StringExtensions.swift */,
+				0184A9691D901321006B239A /* CommandLine.swift */,
+				0184A96A1D901321006B239A /* Option.swift */,
+				0184A96B1D901321006B239A /* StringExtensions.swift */,
 			);
 			name = CommandLine;
-			path = Carthage/Checkouts/CommandLine/CommandLine;
+			path = Frameworks/CommandLine;
 			sourceTree = "<group>";
 		};
 		0142C6B11C4E9929004FBF93 /* Models */ = {
@@ -417,7 +414,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0184A96F1D90134A006B239A /* CommandLine.swift in Sources */,
 				0169B8CD1C567C9200ADF94F /* ModelGeneratorCLI.swift in Sources */,
+				0184A9701D90134A006B239A /* Option.swift in Sources */,
 				0169B8C11C567C3800ADF94F /* ModelGenerator.swift in Sources */,
 				0169B8C21C567C3800ADF94F /* ExtensionCodeGenerator.swift in Sources */,
 				0169B8C31C567C3800ADF94F /* DecodableCodeGenerator.swift in Sources */,
@@ -427,11 +426,9 @@
 				0169B8C71C567C3800ADF94F /* Model.swift in Sources */,
 				0169B8C81C567C3800ADF94F /* Property.swift in Sources */,
 				0169B8C91C567C3800ADF94F /* Extensions.swift in Sources */,
+				0184A9711D90134A006B239A /* StringExtensions.swift in Sources */,
 				0169B8CA1C567C3800ADF94F /* Indentation.swift in Sources */,
 				0169B8CE1C567C9200ADF94F /* main.swift in Sources */,
-				0169B8BC1C567BD000ADF94F /* CommandLine.swift in Sources */,
-				0169B8BD1C567BD000ADF94F /* Option.swift in Sources */,
-				0169B8BE1C567BD000ADF94F /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,9 +452,6 @@
 				010C441C1C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift in Sources */,
 				0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */,
 				0169B8981C5667AE00ADF94F /* ModelGeneratorTests.swift in Sources */,
-				0142C6D71C4EB9B8004FBF93 /* CommandLine.swift in Sources */,
-				0142C6D81C4EB9B8004FBF93 /* Option.swift in Sources */,
-				0142C6D91C4EB9B8004FBF93 /* StringExtensions.swift in Sources */,
 				0142C6E01C4ECA96004FBF93 /* EncodableCodeGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,10 +566,6 @@
 		0142C6A21C4E9099004FBF93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -584,10 +574,6 @@
 		0142C6A31C4E9099004FBF93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
