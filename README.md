@@ -13,10 +13,12 @@ This is a helper command line tool to generate model boilerplate code for models
 
 ### Carthage
 ~~~
-github "nodes-ios/model-generator"
-~~~
+# Swift 3
+github "nodes-ios/model-generator" "~> 1.0"
 
-> TODO: Improve
+# Swift 2.2
+github "nodes-ios/model-generator" "~> 0.0"
+~~~
 
 ## 👥 Credits
 Made with ❤️ at [Nodes](http://nodesagency.com). 
