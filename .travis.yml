@@ -5,6 +5,10 @@ branches:
   only:
     - master
 script:
-  - set -o pipefail && xcodebuild -project model-generator.xcodeproj -scheme ModelGenerator -sdk macosx -configuration Release build test | xcpretty
+  # Test in debug first
+  - set -o pipefail && xcodebuild -project model-generator.xcodeproj -scheme ModelGenerator -sdk macosx -configuration Debug clean build test | xcpretty
+  
+  # Build for release
+  - set -o pipefail && xcodebuild -project model-generator.xcodeproj -scheme ModelGenerator -sdk macosx -configuration Release clean build | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash)
