@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import ModelGenerator
 
 class EncodableCodeGeneratorTests: XCTestCase {
 
@@ -64,6 +65,34 @@ class EncodableCodeGeneratorTests: XCTestCase {
 
         XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        (dict, \"a_property\")           <== a_property\n        (dict, \"this_isADifferentKey\") <== fooProperty\n        (dict, \"n\")                    <== barProperty\n        return dict\n    }",
             "Encodable code generated for class is not correct.")
+    }
+
+    func testClassWithReservedKeywordPropertyEncodableCode() {
+        var model = Model(name: "SomeModel", type: .Class, accessLevel: .Private, properties: [])
+        model.properties = [
+            Property(
+                name: "convenience",
+                key: nil,
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: true),
+            Property(
+                name: "self",
+                key: "this_isADifferentKey",
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: false),
+            Property(
+                name: "skull",
+                key: "n",
+                isOptional:  false,
+                isPrimitiveType: false,
+                hasDefaultValue: true)]
+
+        let code = EncodableCodeGenerator.encodableCode(withModel: model, useNativeDictionaries: false)
+
+        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        (dict, \"convenience\")          <== `convenience`\n        (dict, \"this_isADifferentKey\") <== `self`\n        (dict, \"n\")                    <== skull\n        return dict\n    }",
+                       "Encodable code generated for class is not correct.")
     }
 
     func testEncodableStructCodeWithNativeDictionaries() {

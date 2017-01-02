@@ -10,6 +10,7 @@ import Foundation
 
 extension String {
     static func repeated(character: Character, count: Int) -> String {
+        guard count > 0 else { return "" }
         return String(repeating: "\(character)", count: count)
     }
 

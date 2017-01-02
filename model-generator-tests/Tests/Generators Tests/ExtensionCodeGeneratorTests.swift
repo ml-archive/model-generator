@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import ModelGenerator
 
 class ExtensionCodeGeneratorTests: XCTestCase {
 
@@ -32,5 +33,13 @@ class ExtensionCodeGeneratorTests: XCTestCase {
 
         XCTAssertEqual(code, "extension SomeModule.YourModel: Serializable {\nsome content\nseparated by new lines\n\n\n}",
             "Extension code generated with custom module name is not correct.")
+    }
+
+    func testReserverKeywordNameExtensionCode() {
+        let model = Model(name: "Self", type: .Struct, accessLevel: .Private, properties: [])
+        let code = ExtensionCodeGenerator.extensionCode(withModel: model, moduleName: "SomeModule", andContent: "some content\nseparated by new lines\n\n")
+
+        XCTAssertEqual(code, "extension SomeModule.`Self`: Serializable {\nsome content\nseparated by new lines\n\n\n}",
+                       "Extension code generated with reserverd keyword model name is not correct.")
     }
 }

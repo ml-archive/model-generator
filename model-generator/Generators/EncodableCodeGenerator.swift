@@ -30,16 +30,18 @@ struct EncodableCodeGenerator {
         for property in model.properties {
             let keyCharactersCount = property.key?.characters.count ?? property.name.characters.count
             code += indent.string()
+
             if useNativeDictionaries {
                 code += "dict[\"\(property.key ?? property.name)\"]"
-                code += maxPropertyLength > keyCharactersCount ? String.repeated(character: " ", count: maxPropertyLength - keyCharactersCount) : ""
-                code += " = \(property.name)"
+                code += String.repeated(character: " ", count: maxPropertyLength - keyCharactersCount)
+                code += " = \(property.name.escaped)"
                 code += property.isPrimitiveType ? "" : "\(property.isOptional ? "?" : "").encodableRepresentation()"
             } else {
                 code += "(dict, \"\(property.key ?? property.name)\")"
-                code += maxPropertyLength > keyCharactersCount ? String.repeated(character: " ", count: maxPropertyLength - keyCharactersCount) : ""
-                code += " <== \(property.name)"
+                code += String.repeated(character: " ", count: maxPropertyLength - keyCharactersCount)
+                code += " <== \(property.name.escaped)"
             }
+
             code += "\n"
         }
 

@@ -7,19 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0101A3AB1E1AED3900A54603 /* Escaping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0101A3AA1E1AED3900A54603 /* Escaping.swift */; };
+		0101A3AF1E1AF19600A54603 /* Escaping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0101A3AA1E1AED3900A54603 /* Escaping.swift */; };
 		010C441C1C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44161C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift */; };
 		010C441D1C54DCF8003E764F /* IndentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44181C54DCF8003E764F /* IndentationTests.swift */; };
 		010C441E1C54DCF8003E764F /* ModelParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C441A1C54DCF8003E764F /* ModelParserTests.swift */; };
-		0142C6D01C4EB9B8004FBF93 /* ModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6BE1C4E9AD7004FBF93 /* ModelGenerator.swift */; };
-		0142C6D11C4EB9B8004FBF93 /* ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B91C4E9ABA004FBF93 /* ModelParser.swift */; };
-		0142C6D21C4EB9B8004FBF93 /* PropertyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6BB1C4E9AC3004FBF93 /* PropertyParser.swift */; };
-		0142C6D31C4EB9B8004FBF93 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B21C4E992E004FBF93 /* Model.swift */; };
-		0142C6D41C4EB9B8004FBF93 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6B41C4E9934004FBF93 /* Property.swift */; };
-		0142C6D51C4EB9B8004FBF93 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6C01C4EB4E8004FBF93 /* Extensions.swift */; };
-		0142C6DF1C4ECA94004FBF93 /* DecodableCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6DD1C4ECA94004FBF93 /* DecodableCodeGenerator.swift */; };
-		0142C6E01C4ECA96004FBF93 /* EncodableCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6DB1C4ECA8A004FBF93 /* EncodableCodeGenerator.swift */; };
-		0142C6E31C4ECD36004FBF93 /* Indentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E11C4ECD36004FBF93 /* Indentation.swift */; };
-		0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142C6E91C4ED527004FBF93 /* ExtensionCodeGenerator.swift */; };
 		0169B88A1C55409000ADF94F /* PropertyParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8891C55409000ADF94F /* PropertyParserTests.swift */; };
 		0169B88E1C5544C700ADF94F /* PropertyParserTest1 in Resources */ = {isa = PBXBuildFile; fileRef = 0169B88C1C5543A200ADF94F /* PropertyParserTest1 */; };
 		0169B8941C56678900ADF94F /* DecodableCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169B8931C56678900ADF94F /* DecodableCodeGeneratorTests.swift */; };
@@ -65,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0101A3AA1E1AED3900A54603 /* Escaping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Escaping.swift; sourceTree = "<group>"; };
 		010C44131C54DCF8003E764F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		010C44161C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCodeGeneratorTests.swift; sourceTree = "<group>"; };
 		010C44181C54DCF8003E764F /* IndentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentationTests.swift; sourceTree = "<group>"; };
@@ -254,6 +247,7 @@
 				0169B8D01C567CA000ADF94F /* model-generator.h */,
 				0142C6C01C4EB4E8004FBF93 /* Extensions.swift */,
 				0142C6E11C4ECD36004FBF93 /* Indentation.swift */,
+				0101A3AA1E1AED3900A54603 /* Escaping.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -417,6 +411,7 @@
 				0184A96F1D90134A006B239A /* CommandLine.swift in Sources */,
 				0169B8CD1C567C9200ADF94F /* ModelGeneratorCLI.swift in Sources */,
 				0184A9701D90134A006B239A /* Option.swift in Sources */,
+				0101A3AF1E1AF19600A54603 /* Escaping.swift in Sources */,
 				0169B8C11C567C3800ADF94F /* ModelGenerator.swift in Sources */,
 				0169B8C21C567C3800ADF94F /* ExtensionCodeGenerator.swift in Sources */,
 				0169B8C31C567C3800ADF94F /* DecodableCodeGenerator.swift in Sources */,
@@ -438,21 +433,11 @@
 			files = (
 				0169B8961C56679200ADF94F /* EncodableCodeGeneratorTests.swift in Sources */,
 				0169B8941C56678900ADF94F /* DecodableCodeGeneratorTests.swift in Sources */,
-				0142C6D01C4EB9B8004FBF93 /* ModelGenerator.swift in Sources */,
 				010C441D1C54DCF8003E764F /* IndentationTests.swift in Sources */,
-				0142C6D11C4EB9B8004FBF93 /* ModelParser.swift in Sources */,
-				0142C6D21C4EB9B8004FBF93 /* PropertyParser.swift in Sources */,
-				0142C6D31C4EB9B8004FBF93 /* Model.swift in Sources */,
 				0169B88A1C55409000ADF94F /* PropertyParserTests.swift in Sources */,
-				0142C6DF1C4ECA94004FBF93 /* DecodableCodeGenerator.swift in Sources */,
-				0142C6E31C4ECD36004FBF93 /* Indentation.swift in Sources */,
 				010C441E1C54DCF8003E764F /* ModelParserTests.swift in Sources */,
-				0142C6D41C4EB9B8004FBF93 /* Property.swift in Sources */,
-				0142C6D51C4EB9B8004FBF93 /* Extensions.swift in Sources */,
 				010C441C1C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift in Sources */,
-				0142C6EB1C4ED527004FBF93 /* ExtensionCodeGenerator.swift in Sources */,
 				0169B8981C5667AE00ADF94F /* ModelGeneratorTests.swift in Sources */,
-				0142C6E01C4ECA96004FBF93 /* EncodableCodeGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +448,7 @@
 				0169B8B11C567AC000ADF94F /* ModelGenerator.swift in Sources */,
 				0169B8B21C567AC000ADF94F /* ExtensionCodeGenerator.swift in Sources */,
 				0169B8B31C567AC000ADF94F /* DecodableCodeGenerator.swift in Sources */,
+				0101A3AB1E1AED3900A54603 /* Escaping.swift in Sources */,
 				0169B8B41C567AC000ADF94F /* EncodableCodeGenerator.swift in Sources */,
 				0169B8B51C567AC000ADF94F /* ModelParser.swift in Sources */,
 				0169B8B61C567AC000ADF94F /* PropertyParser.swift in Sources */,

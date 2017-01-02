@@ -31,7 +31,7 @@ extension Model {
         var length = 0
 
         for property in properties {
-            let count = property.name.characters.count
+            let count = property.name.escaped.characters.count
             if count > length {
                 length = count
             }
