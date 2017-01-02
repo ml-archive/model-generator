@@ -17,12 +17,12 @@ struct ExtensionCodeGenerator {
         // If applicable, adds module name and a dot
         // eg. "MyModule."
         if let moduleName = moduleName {
-            extensionString += "\(moduleName)."
+            extensionString += "\(moduleName.escaped)."
         }
 
         // Adds model name, protocol, bracket and a new line
         // eg. "MyModel: MyProtocol {\n"
-        extensionString += "\(model.name): \(protocolName) {\n"
+        extensionString += "\(model.name.escaped): \(protocolName) {\n"
 
         // Add the content, new line and a closing bracket
         extensionString += "\(content)\n}"

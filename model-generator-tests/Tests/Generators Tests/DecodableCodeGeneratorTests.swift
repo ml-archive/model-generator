@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import ModelGenerator
 
 class DecodableCodeGeneratorTests: XCTestCase {
 
@@ -64,6 +65,34 @@ class DecodableCodeGeneratorTests: XCTestCase {
 
         XCTAssertEqual(code, "    convenience init(dictionary: NSDictionary?) {\n        self.init()\n        a_property  <== (self, dictionary, \"a_property\")\n        fooProperty <== (self, dictionary, \"this_isADifferentKey\")\n        barProperty <== (self, dictionary, \"n\")\n    }\n\n",
             "Decodable code generated for class is not correct.")
+    }
+
+    func testClassWithReservedKeywordPropertyDecodableCode() {
+        var model = Model(name: "SomeModel", type: .Class, accessLevel: .Private, properties: [])
+        model.properties = [
+            Property(
+                name: "convenience",
+                key: nil,
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: true),
+            Property(
+                name: "self",
+                key: "this_isADifferentKey",
+                isOptional:  true,
+                isPrimitiveType: false,
+                hasDefaultValue: false),
+            Property(
+                name: "skull",
+                key: "n",
+                isOptional:  false,
+                isPrimitiveType: false,
+                hasDefaultValue: true)]
+
+        let code = DecodableCodeGenerator.decodableCode(withModel: model, useNativeDictionaries: false)
+
+        XCTAssertEqual(code, "    convenience init(dictionary: NSDictionary?) {\n        self.init()\n        `convenience` <== (self, dictionary, \"convenience\")\n        `self`        <== (self, dictionary, \"this_isADifferentKey\")\n        skull         <== (self, dictionary, \"n\")\n    }\n\n",
+                       "Decodable code generated for class with reserved keyword properties is not correct.")
     }
 
     func testDecodableStructCodeWithNativeDictionaries() {
