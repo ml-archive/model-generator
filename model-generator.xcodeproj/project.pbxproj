@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0101A3AB1E1AED3900A54603 /* Escaping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0101A3AA1E1AED3900A54603 /* Escaping.swift */; };
 		0101A3AF1E1AF19600A54603 /* Escaping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0101A3AA1E1AED3900A54603 /* Escaping.swift */; };
+		0101A3B11E1AFB7500A54603 /* model-generator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0169B8D01C567CA000ADF94F /* model-generator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010C441C1C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44161C54DCF8003E764F /* ExtensionCodeGeneratorTests.swift */; };
 		010C441D1C54DCF8003E764F /* IndentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C44181C54DCF8003E764F /* IndentationTests.swift */; };
 		010C441E1C54DCF8003E764F /* ModelParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C441A1C54DCF8003E764F /* ModelParserTests.swift */; };
@@ -43,6 +44,16 @@
 		0184A9701D90134A006B239A /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184A96A1D901321006B239A /* Option.swift */; };
 		0184A9711D90134A006B239A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184A96B1D901321006B239A /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0101A3B21E1AFBDB00A54603 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0142C6921C4E9099004FBF93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0169B8A81C567AA400ADF94F;
+			remoteInfo = ModelGenerator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0142C6981C4E9099004FBF93 /* CopyFiles */ = {
@@ -286,6 +297,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0101A3B11E1AFB7500A54603 /* model-generator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +332,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0101A3B31E1AFBDB00A54603 /* PBXTargetDependency */,
 			);
 			name = "model-generator-tests";
 			productName = "model-generator-tests";
@@ -460,6 +473,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0101A3B31E1AFBDB00A54603 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0169B8A81C567AA400ADF94F /* ModelGenerator */;
+			targetProxy = 0101A3B21E1AFBDB00A54603 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0142C69F1C4E9099004FBF93 /* Debug */ = {
