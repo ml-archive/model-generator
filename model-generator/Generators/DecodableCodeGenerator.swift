@@ -36,10 +36,10 @@ struct DecodableCodeGenerator {
             code += String.repeated(character: " ", count: maxPropertyLength - name.characters.count)
 
             if useNativeDictionaries {
-                code += " = self.mapped(dictionary, key: \"\(property.key ?? property.name)\")"
+                code += " = self.mapped(dictionary, key: \"\(property.key ?? property.name.unescaped)\")"
                 code += property.hasDefaultValue ? (" ?? \(property.name)\(property.isOptional ? "!" : "")") : ""
             } else {
-                code += " <== (self, dictionary, \"\(property.key ?? property.name)\")"
+                code += " <== (self, dictionary, \"\(property.key ?? property.name.unescaped)\")"
             }
 
             code += "\n"

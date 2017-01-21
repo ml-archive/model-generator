@@ -26,4 +26,8 @@ extension String {
     public var escaped: String {
         return Escaping.reserved.contains(self) ? "`\(self)`" : self
     }
+
+    public var unescaped: String {
+        return self.replacingOccurrences(of: "`", with: "")
+    }
 }
