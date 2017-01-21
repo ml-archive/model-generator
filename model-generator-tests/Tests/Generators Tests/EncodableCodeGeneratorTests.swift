@@ -83,15 +83,15 @@ class EncodableCodeGeneratorTests: XCTestCase {
                 isPrimitiveType: false,
                 hasDefaultValue: false),
             Property(
-                name: "skull",
-                key: "n",
+                name: "`in`",
+                key: nil,
                 isOptional:  false,
                 isPrimitiveType: false,
                 hasDefaultValue: true)]
 
         let code = EncodableCodeGenerator.encodableCode(withModel: model, useNativeDictionaries: false)
 
-        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        (dict, \"convenience\")          <== `convenience`\n        (dict, \"this_isADifferentKey\") <== `self`\n        (dict, \"n\")                    <== skull\n        return dict\n    }",
+        XCTAssertEqual(code, "    func encodableRepresentation() -> NSCoding {\n        let dict = NSMutableDictionary()\n        (dict, \"convenience\")          <== `convenience`\n        (dict, \"this_isADifferentKey\") <== `self`\n        (dict, \"in\")                   <== `in`\n        return dict\n    }",
                        "Encodable code generated for class is not correct.")
     }
 
