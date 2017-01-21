@@ -83,15 +83,15 @@ class DecodableCodeGeneratorTests: XCTestCase {
                 isPrimitiveType: false,
                 hasDefaultValue: false),
             Property(
-                name: "skull",
-                key: "n",
+                name: "`in`",
+                key: nil,
                 isOptional:  false,
                 isPrimitiveType: false,
                 hasDefaultValue: true)]
 
         let code = DecodableCodeGenerator.decodableCode(withModel: model, useNativeDictionaries: false)
 
-        XCTAssertEqual(code, "    convenience init(dictionary: NSDictionary?) {\n        self.init()\n        `convenience` <== (self, dictionary, \"convenience\")\n        `self`        <== (self, dictionary, \"this_isADifferentKey\")\n        skull         <== (self, dictionary, \"n\")\n    }\n\n",
+        XCTAssertEqual(code, "    convenience init(dictionary: NSDictionary?) {\n        self.init()\n        `convenience` <== (self, dictionary, \"convenience\")\n        `self`        <== (self, dictionary, \"this_isADifferentKey\")\n        `in`          <== (self, dictionary, \"in\")\n    }\n\n",
                        "Decodable code generated for class with reserved keyword properties is not correct.")
     }
 
