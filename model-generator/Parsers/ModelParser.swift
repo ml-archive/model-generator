@@ -104,7 +104,7 @@ extension ModelParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "final.*class(?=.*\\{)",
-                options: NSRegularExpression.Options(rawValue: 0))
+                options: NSRegularExpression.Options.dotMatchesLineSeparators)
             return regex
         } catch {
             print("Couldn't create final class regex.")
@@ -116,7 +116,7 @@ extension ModelParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "struct(?=.*\\{)",
-                options: NSRegularExpression.Options(rawValue: 0))
+                options: NSRegularExpression.Options.dotMatchesLineSeparators)
             return regex
         } catch {
             print("Couldn't create struct regex.")
@@ -128,7 +128,7 @@ extension ModelParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "private(?=.*class|.*struct)(?=.*\\{)|public(?=.*class|.*struct)(?=.*\\{)|internal(?=.*class|.*struct)(?=.*\\{)",
-                options: NSRegularExpression.Options(rawValue: 0))
+                options: NSRegularExpression.Options.dotMatchesLineSeparators)
             return regex
         } catch {
             print("Couldn't create access level regex.")
@@ -140,7 +140,7 @@ extension ModelParser {
         do {
             let regex = try NSRegularExpression(
                 pattern: "\\S+(?=\\s*\\:)|\\S+(?=\\s*\\{)",
-                options: NSRegularExpression.Options(rawValue: 0))
+                options: NSRegularExpression.Options.dotMatchesLineSeparators)
             return regex
         } catch {
             print("Couldn't create model name regex.")
