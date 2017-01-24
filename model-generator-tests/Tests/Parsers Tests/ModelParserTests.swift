@@ -45,6 +45,20 @@ class ModelParserTests: XCTestCase {
             XCTAssert(false, "Struct parsing failed: \(error).")
         }
     }
+    
+    func testStructParsingWithTabsAndWhitespaces() {
+        let testSourceCode = "struct TestStruct    : SomeOtherStruct {\n\t\t\tvar name  : String?\n\t\t\tvar number: Int = 0\n}"
+        
+        do {
+            let model = try ModelParser.model(fromSourceCode: testSourceCode)
+            
+            XCTAssertEqual(model.name, "TestStruct", "Struct name parsing failed.")
+            XCTAssertEqual(model.type.rawValue, "struct", "Struct type parsing failed.")
+            XCTAssertEqual(model.accessLevel.rawValue, "internal", "Struct access level parsing failed.")
+        } catch {
+            XCTAssert(false, "Struct parsing failed: \(error).")
+        }
+    }
 
     func testClassParsingWithNewline() {
         let testSourceCode = "final private class TestClass: NSObject \n\n\n\n{\nvar name: String?\nvar number: Int = 0\n}"
