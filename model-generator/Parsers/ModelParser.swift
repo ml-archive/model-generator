@@ -49,7 +49,7 @@ struct ModelParser {
     }
 
     static func modelType(fromSourceCode code: String) throws -> ModelType? {
-        let range = NSMakeRange(0, code.characters.count)
+        let range = NSMakeRange(0, code.count)
 
         // Check if struct
         let structMatches = structRegex?.numberOfMatches(in: code, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: range)
@@ -74,7 +74,7 @@ struct ModelParser {
     }
 
     static func modelName(fromSourceCode code: String) -> String? {
-        let range = NSMakeRange(0, code.characters.count)
+        let range = NSMakeRange(0, code.count)
         let match = modelNameRegex?.firstMatch(in: code, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: range)
 
         // If we found model name
@@ -86,7 +86,7 @@ struct ModelParser {
     }
 
     static func accessLevel(fromSourceCode code: String) -> AccessLevel {
-        let range = NSMakeRange(0, code.characters.count)
+        let range = NSMakeRange(0, code.count)
         let match = accessLevelRegex?.firstMatch(in: code, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: range)
 
         if let match = match {

@@ -67,7 +67,7 @@ internal extension String {
     }
     
     return (Double(Int(characteristic)!) +
-      Double(Int(mantissa)!) / pow(Double(10), Double(mantissa.characters.count - 1))) *
+      Double(Int(mantissa)!) / pow(Double(10), Double(mantissa.count - 1))) *
       (isNegative ? -1 : 1)
   }
   
@@ -107,7 +107,7 @@ internal extension String {
     var currentLineWidth = 0
     
     for word in self.splitByCharacter(splitBy: splitBy) {
-      let wordLength = word.characters.count
+      let wordLength = word.count
       
       if currentLineWidth + wordLength + 1 > width {
         /* Word length is greater than line length, can't wrap */

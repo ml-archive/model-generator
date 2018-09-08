@@ -28,7 +28,7 @@ struct EncodableCodeGenerator {
 
         // Generate encodable code for each property
         for property in model.properties {
-            let keyCharactersCount = property.key?.characters.count ?? property.name.unescaped.characters.count
+            let keyCharactersCount = property.key?.count ?? property.name.unescaped.count
             code += indent.string()
 
             if useNativeDictionaries {
