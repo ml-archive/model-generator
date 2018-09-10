@@ -42,7 +42,7 @@ public class Option {
   
   fileprivate init(_ shortFlag: String?, _ longFlag: String?, _ required: Bool, _ helpMessage: String) {
     if let sf = shortFlag {
-      assert(sf.characters.count == 1, "Short flag must be a single character")
+      assert(sf.count == 1, "Short flag must be a single character")
       assert(Int(sf) == nil && sf.toDouble() == nil, "Short flag cannot be a numeric value")
     }
     

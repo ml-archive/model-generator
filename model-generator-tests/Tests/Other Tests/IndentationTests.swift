@@ -15,16 +15,16 @@ class IndentationTests: XCTestCase {
         let indent = Indentation(level: 0)
         let myString = "\(indent.string())test"
 
-        XCTAssertEqual(myString.characters.count, 4, "Zero level indentation failed.")
+        XCTAssertEqual(myString.count, 4, "Zero level indentation failed.")
     }
 
     func testNormalIndent() {
         let indent = Indentation(level: 3)
         let myString = "\(indent.string())test"
 
-        let expected = (Indentation.defaultString.characters.count * 3) + 4
+        let expected = (Indentation.defaultString.count * 3) + 4
 
-        XCTAssertEqual(myString.characters.count, expected, "Normal (level 3) indentation failed.")
+        XCTAssertEqual(myString.count, expected, "Normal (level 3) indentation failed.")
     }
 
     func testHighIndent() {
@@ -32,15 +32,15 @@ class IndentationTests: XCTestCase {
         let indent   = Indentation(level: 3487)
         let myString = "\(indent.string())test"
 
-        let expected = (Indentation.defaultString.characters.count * level) + 4
+        let expected = (Indentation.defaultString.count * level) + 4
 
-        XCTAssertEqual(myString.characters.count, expected, "High level (\(level)) indentation failed.")
+        XCTAssertEqual(myString.count, expected, "High level (\(level)) indentation failed.")
     }
 
     func testCustomIndent() {
         let indent   = Indentation(level: 3, customString: "       ")
         let myString = "\(indent.string())test"
 
-        XCTAssertEqual(myString.characters.count, 25, "Indentation with custom string failed.")
+        XCTAssertEqual(myString.count, 25, "Indentation with custom string failed.")
     }
 }

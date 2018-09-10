@@ -185,7 +185,7 @@ public class CommandLineKit {
       }
       
       let skipChars = arg.hasPrefix(LongOptionPrefix) ?
-        LongOptionPrefix.characters.count : ShortOptionPrefix.characters.count
+        LongOptionPrefix.count : ShortOptionPrefix.count
       let flagWithArg = arg[arg.index(arg.startIndex, offsetBy: skipChars) ..< arg.endIndex]
       
       /* The argument contained nothing but ShortOptionPrefix or LongOptionPrefix */
@@ -210,7 +210,7 @@ public class CommandLineKit {
       }
       
       /* Flags that do not take any arguments can be concatenated */
-      let flagLength = flag.characters.count
+      let flagLength = flag.count
       if !flagMatched && !arg.hasPrefix(LongOptionPrefix) {
         for (i, c) in flag.characters.enumerated() {
           for option in _options {
@@ -257,7 +257,7 @@ public class CommandLineKit {
     
     var flagWidth = 0
     for opt in _options {
-      flagWidth = max(flagWidth, "  \(opt.flagDescription):".characters.count)
+      flagWidth = max(flagWidth, "  \(opt.flagDescription):".count)
     }
 
     print("Usage: \(name) [options]", to: &to)

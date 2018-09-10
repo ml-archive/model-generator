@@ -31,7 +31,7 @@ extension Model {
         var length = 0
 
         for property in properties {
-            let count = property.name.escaped.characters.count
+            let count = property.name.escaped.count
             if count > length {
                 length = count
             }
@@ -44,7 +44,7 @@ extension Model {
         var length = 0
 
         for property in properties {
-            let count = property.key?.characters.count ?? property.name.unescaped.characters.count
+            let count = property.key?.count ?? property.name.unescaped.count
             if count > length {
                 length = count
             }

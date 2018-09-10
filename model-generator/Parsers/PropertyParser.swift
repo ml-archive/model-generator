@@ -34,7 +34,7 @@ struct PropertyParser {
         for line in lines {
             // Skip empty lines
             let trimmedLine = line.trimWhitespace()
-            if trimmedLine.characters.count == 0 { continue }
+            if trimmedLine.count == 0 { continue }
 
             // If line is commented out
             if trimmedLine.hasPrefix("//") { continue }

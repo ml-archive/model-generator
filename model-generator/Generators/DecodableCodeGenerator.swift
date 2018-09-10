@@ -33,7 +33,7 @@ struct DecodableCodeGenerator {
             let name = property.name.escaped
 
             code += indent.string() + name
-            code += String.repeated(character: " ", count: maxPropertyLength - name.characters.count)
+            code += String.repeated(character: " ", count: maxPropertyLength - name.count)
 
             if useNativeDictionaries {
                 code += " = self.mapped(dictionary, key: \"\(property.key ?? property.name.unescaped)\")"
